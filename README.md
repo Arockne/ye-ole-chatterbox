@@ -1,4 +1,16 @@
-# README
+# Ye Ole Chatterbox
+
+Welcome to my chatting application.
+
+To get started:
+
+```sh
+bundle install
+rails db:create db:migrate db:seed
+npm install --prefix client
+```
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
