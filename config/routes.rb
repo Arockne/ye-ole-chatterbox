@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     get '/hello', to: 'hello#hello_world'
     post '/login', to: 'sessions#create'
+    delete '/logout', to: 'sessions#destroy'
   end
 
   get '*path',
