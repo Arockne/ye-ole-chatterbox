@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/hello', to: 'hello#hello_world'
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
+    get '/me', to: 'users#show'
   end
 
   get '*path',
