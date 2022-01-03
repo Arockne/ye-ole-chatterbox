@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SignIn() {
+function LoginForm() {
   return (
     <div>I am a sign in component!</div>
   )
 }
 
-export default SignIn
+export default LoginForm
