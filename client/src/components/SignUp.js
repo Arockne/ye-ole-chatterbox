@@ -5,3 +5,5 @@ function SignUp() {
     <div>I am the sign up component!</div>
   )
 }
+
+export default SignUp
