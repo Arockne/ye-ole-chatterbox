@@ -16,10 +16,14 @@ function App() {
       })
   }, []);
 
-  if (!user) {
-    return <Login />
+  function handleUserLogin(userWhoLoggedIn) {
+    setUser(user => userWhoLoggedIn)
   }
-  
+
+  if (!user) {
+    return <Login handleUserLogin={handleUserLogin}/>
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
