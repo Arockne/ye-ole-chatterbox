@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const signUpFormDefaultValues = {
   username: '',
@@ -7,9 +7,11 @@ const signUpFormDefaultValues = {
   password_confirmation: ''
 }
 
-function SignUpForm() {
+function SignUpForm({ handleUser }) {
   const [formData, setFormData] = useState(signUpFormDefaultValues)
   const [errors, setErrors] = useState([])
+
+  const navigate = useNavigate()
 
   function handleFormChange(e) {
     const { name, value } = e.target
@@ -27,7 +29,11 @@ function SignUpForm() {
     })
     .then(r => {
       if (r.ok) {
-
+        r.json().then(user => {
+          setFormData(data => signUpFormDefaultValues)
+          navigate('/')
+          handleUser(user)
+        })
       } else {
         r.json().then(e => {
           setErrors(errors => e.errors)

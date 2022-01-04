@@ -12,7 +12,7 @@ function Login({ handleUser }) {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LoginForm handleUser={handleUser}/>}/>
-          <Route path='/signup' element={<SignUpForm />} />
+          <Route path='/signup' element={<SignUpForm handleUser={handleUser}/>} />
         </Routes>
       </BrowserRouter>
     </div>
