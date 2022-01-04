@@ -2,21 +2,30 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Login from './Login'
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    fetch("/api/hello")
-      .then((r) => r.json())
-      .then((data) => setCount(data.count));
+    fetch("/api/me")
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((userData) => setUser(() => userData))
+        }
+      })
   }, []);
 
+  if (!user) {
+    return <Login />
+  }
+  
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/hello" element={<h1>Test Route</h1>}/>
-          <Route path="/" element={<h1>Page Count: {count}</h1>}/>
+          <Route path="/" element={<h1>Page Count: {'Successful Login'}</h1>}/>
         </Routes>
       </div>
     </BrowserRouter>
