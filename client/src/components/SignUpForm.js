@@ -1,8 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SignUpForm() {
   return (
-    <div>I am the sign up component!</div>
+    <div>
+      <form>
+        <label>Username:</label>
+        <input />
+        <label>Password:</label>
+        <input />
+        <label>Password Confirmation:</label>
+        <input />
+        <input type='submit'/>
+      </form>
+      <Link to='/'>To Login</Link>
+    </div>
   )
 }
 
