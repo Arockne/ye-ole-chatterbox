@@ -4,14 +4,14 @@ import logo from '../images/moustache-man.jpg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SignUpForm from './SignUpForm'
 
-function Login({ handleUserLogin }) {
+function Login({ handleUser }) {
   return (
     <div>
       <img src={logo} alt='moustache man' width='100px'/>
       <h2>Welcome to the chatter!</h2>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LoginForm handleUserLogin={handleUserLogin}/>}/>
+          <Route path='/' element={<LoginForm handleUser={handleUser}/>}/>
           <Route path='/signup' element={<SignUpForm />} />
         </Routes>
       </BrowserRouter>
