@@ -9,15 +9,36 @@ const signUpFormDefaultValues = {
 
 function SignUpForm() {
   const [formData, setFormData] = useState(signUpFormDefaultValues)
+  const [errors, setErrors] = useState([])
 
   function handleFormChange(e) {
     const { name, value } = e.target
     setFormData(formData => ({ ...formData, [name]: value }))
   }
 
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(r => {
+      if (r.ok) {
+
+      } else {
+        r.json().then(e => {
+          setErrors(errors => e.errors)
+        })
+      }
+    })
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label>Username:</label>
         <input 
           type='text'
@@ -43,6 +64,9 @@ function SignUpForm() {
         />
         <input type='submit'/>
       </form>
+      {
+        errors.map(error => <p key={error}>{error}</p>)
+      }
       <Link to='/'>To Login</Link>
     </div>
   )
