@@ -39,9 +39,10 @@ function LoginForm({ handleUser }) {
   }
 
   return (
-    <div>
+    <div className='user-form'>
       <form onSubmit={handleFormSubmit}>
         <label>Username:
+          <br />
           <input 
             type='text'
             name='username'
@@ -49,7 +50,9 @@ function LoginForm({ handleUser }) {
             onChange={handleFormChange}
           />
         </label>
+        <br />
         <label>Password:
+          <br />
           <input 
             type='password'
             autoComplete='off'
@@ -57,6 +60,7 @@ function LoginForm({ handleUser }) {
             value={formData.password}
             onChange={handleFormChange}
           />
+          <br />
           <input type='submit'/>
         </label>
       </form>
