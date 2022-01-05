@@ -41,6 +41,10 @@
   font-size: 1.1rem;
 }
 
+.user-form p {
+  text-align: center;
+}
+
 .submit-button {
   background-color: white;
   border-radius: 5px;
