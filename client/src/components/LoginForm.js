@@ -67,7 +67,7 @@ function LoginForm({ handleUser }) {
       {
         errors.map(error => <p key={error}>{error}</p>)
       }
-      <Link to='/signup'>To Signup</Link>
+      <p>Enlist in an <Link to='/signup'>account</Link>,<br/> if one does not exist</p>
     </div>
   )
 }
