@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Login from './Login'
+import Header from './Header'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -35,14 +36,14 @@ function App() {
   }
 
   return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route path="chatrooms/search" element={<h1>Test Route</h1>}/>
 
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<h1>Page Count: {'Successful Login'}</h1>}/>
-          <Route path="/hello" element={<h1>Test Route</h1>}/>
-        </Routes>
-      </div>
-
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
