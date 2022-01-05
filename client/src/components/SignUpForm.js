@@ -45,30 +45,33 @@ function SignUpForm({ handleUser }) {
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <label>Username:</label>
-        <input 
-          type='text'
-          name='username'
-          value={formData.username}
-          onChange={handleFormChange}
-        />
-        <label>Password:</label>
-        <input 
-          type='password'
-          autoComplete='off'
-          name='password'
-          value={formData.password}
-          onChange={handleFormChange}
-        />
-        <label>Password Confirmation:</label>
-        <input 
-          type='password'
-          autoComplete='off'
-          name='password_confirmation'
-          value={formData.password_confirmation}
-          onChange={handleFormChange}
-        />
-        <input type='submit'/>
+        <label>Username:
+          <input 
+            type='text'
+            name='username'
+            value={formData.username}
+            onChange={handleFormChange}
+          />
+        </label>
+        <label>Password:
+          <input 
+            type='password'
+            autoComplete='off'
+            name='password'
+            value={formData.password}
+            onChange={handleFormChange}
+          />
+        </label>
+        <label>Password Confirmation:
+          <input 
+            type='password'
+            autoComplete='off'
+            name='password_confirmation'
+            value={formData.password_confirmation}
+            onChange={handleFormChange}
+          />
+          <input type='submit'/>
+        </label>
       </form>
       {
         errors.map(error => <p key={error}>{error}</p>)
