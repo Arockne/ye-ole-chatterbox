@@ -60,7 +60,6 @@ function LoginForm({ handleUser }) {
             value={formData.password}
             onChange={handleFormChange}
           />
-          <br />
         </label>
         <input className='submit-button' type='submit' value='Join in!'/>
       </form>

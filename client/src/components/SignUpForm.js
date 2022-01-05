@@ -43,9 +43,10 @@ function SignUpForm({ handleUser }) {
   }
 
   return (
-    <div>
+    <div className='user-form'>
       <form onSubmit={handleFormSubmit}>
         <label>Username:
+          <br/>
           <input 
             type='text'
             name='username'
@@ -53,7 +54,9 @@ function SignUpForm({ handleUser }) {
             onChange={handleFormChange}
           />
         </label>
+        <br/>
         <label>Password:
+          <br/>
           <input 
             type='password'
             autoComplete='off'
@@ -62,7 +65,9 @@ function SignUpForm({ handleUser }) {
             onChange={handleFormChange}
           />
         </label>
+        <br/>
         <label>Password Confirmation:
+          <br/>
           <input 
             type='password'
             autoComplete='off'
@@ -70,13 +75,13 @@ function SignUpForm({ handleUser }) {
             value={formData.password_confirmation}
             onChange={handleFormChange}
           />
-          <input type='submit'/>
         </label>
+        <input className='submit-button' type='submit' value='Register'/>
       </form>
       {
         errors.map(error => <p key={error}>{error}</p>)
       }
-      <Link to='/'>To Login</Link>
+      <p><Link to='/'>Sign in</Link> if account<br/>does exit</p>
     </div>
   )
 }
