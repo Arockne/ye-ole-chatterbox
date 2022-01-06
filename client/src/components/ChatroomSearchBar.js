@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ChatRoomSearchBar() {
+function ChatroomSearchBar() {
   return (
     <div></div>
   )
 }
 
-export default ChatRoomSearchBar
+export default ChatroomSearchBar
