@@ -17,6 +17,8 @@ function Header({ setUser }) {
     })
   }
 
+  const activeStyle = { backgroundColor: 'black', color: 'white' }
+
   return (
     <div>
       <header>
@@ -27,7 +29,15 @@ function Header({ setUser }) {
           </Link>
         </div>
         <nav>
-          <NavLink className='nav-button' to='/chatrooms/search'>Parlor Rooms</NavLink>
+          <NavLink 
+            className='nav-button' 
+            to='/chatrooms/search'
+            style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }
+          >
+            Parlor Rooms
+          </NavLink>
           <button className='nav-button' onClick={handleLogout}>Logout</button>
         </nav>
       </header>
