@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
-function ChatroomSearchBar() { 
-  const [search, setSearch] = useState('')
-  const [sortBy, setSortBy] = useState('name')
-
+function ChatroomSearchBar({ search, setSearch, sortBy, setSortBy }) { 
   function handleSearchChange(e) {
     setSearch(search => e.target.value)
   }
