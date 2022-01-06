@@ -21,11 +21,9 @@ function Header({ setUser }) {
     <div>
       <header>
         <div>
-          <Link to='/'>
-            <h1>Ye Ole ChatterBox
-              
-            </h1>
-            <img src={logo} alt='moustache man' width='30px'/>
+          <Link className='heading' to='/'>
+            <h1>Ye Ole ChatterBox</h1>
+            <img src={logo} alt='moustache man' width='30px'/> 
           </Link>
         </div>
         <nav>

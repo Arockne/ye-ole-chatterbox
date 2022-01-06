@@ -64,6 +64,23 @@ header {
   border-bottom: 2px solid black;
 }
 
+.heading {
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+.heading h1 {
+  color: black;
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+}
+
+.heading img {
+  width: 4rem;
+  margin-bottom: .2rem
+}
+
 header nav {
   display: flex;
   align-items: flex-end;
