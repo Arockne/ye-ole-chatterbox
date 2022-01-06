@@ -6,7 +6,7 @@ function Header({ setUser }) {
   const navigate = useNavigate()
 
   function handleLogout() {
-    fetch('api/logout', {
+    fetch('/api/logout', {
       method: 'DELETE'
     })
     .then(r => {
