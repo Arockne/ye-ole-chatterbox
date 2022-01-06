@@ -7,7 +7,7 @@ function ChatroomSearch() {
     <div>
       <ChatroomSearchBar />
       <ChatroomSearchList />
-    </div>
+    </div> 
   )
 }
 

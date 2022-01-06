@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
 
-function ChatroomSearchBar() {
+function ChatroomSearchBar() { 
+  const [search, setSearch] = useState('')
   const [sortBy, setSortBy] = useState('name')
+
+  function handleSearchChange(e) {
+    setSearch(search => e.target.value)
+  }
 
   function handleRadioChange(e) {
     setSortBy(sortBy => e.target.value)
   }
-  
+
   return (
     <div>
-      <input type='text'/>
+      <div>
+        <input 
+          type='text'
+          value={search}
+          onChange={handleSearchChange}
+        />
+      </div>
       <div>
         <fieldset>
           <label>
