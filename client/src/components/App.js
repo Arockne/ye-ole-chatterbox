@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from './Login'
 import Header from './Header'
+import ChatroomSearch from "./ChatroomSearch";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -39,8 +40,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
-          <Route path="chatrooms/search" element={<h1>Test Route</h1>}/>
-
+          <Route path="chatrooms/search" element={<ChatroomSearch />}/>
         </Route>
       </Routes>
     </div>
