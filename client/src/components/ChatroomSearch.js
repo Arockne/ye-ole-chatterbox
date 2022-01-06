@@ -1,8 +1,13 @@
 import React from 'react'
+import ChatroomSearchBar from './ChatroomSearchBar'
+import ChatroomSearchList from './ChatroomSearchList'
 
 function ChatroomSearch() {
   return (
-    <div></div>
+    <div>
+      <ChatroomSearchBar />
+      <ChatroomSearchList />
+    </div>
   )
 }
 
