@@ -18,19 +18,23 @@ function Header({ setUser }) {
   }
 
   return (
-    <header>
-      <div>
-        <Link to='/'>
-          <h1>Ye Ole ChatterBox</h1>
-          <img src={logo} alt='moustache man' width='30px'/>
-        </Link>
-      </div>
-      <nav>
-        <NavLink to='/chatrooms/search'>Parlor Rooms</NavLink>
-        <button onClick={handleLogout}>Logout</button>
-      </nav>
+    <div>
+      <header>
+        <div>
+          <Link to='/'>
+            <h1>Ye Ole ChatterBox
+              
+            </h1>
+            <img src={logo} alt='moustache man' width='30px'/>
+          </Link>
+        </div>
+        <nav>
+          <NavLink className='nav-button' to='/chatrooms/search'>Parlor Rooms</NavLink>
+          <button className='nav-button' onClick={handleLogout}>Logout</button>
+        </nav>
+      </header>
       <Outlet />
-    </header>
+    </div>
   ) 
 }
 
