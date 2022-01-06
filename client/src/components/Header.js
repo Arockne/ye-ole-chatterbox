@@ -1,8 +1,22 @@
 import React from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../images/moustache-man.jpg'
 
-function Header() {
+function Header({ setUser }) {
+  const navigate = useNavigate()
+
+  function handleLogout() {
+    fetch('api/logout', {
+      method: 'DELETE'
+    })
+    .then(r => {
+      if (r.ok) {
+        setUser(null)
+        navigate('/')
+      }
+    })
+  }
+
   return (
     <header>
       <div>
@@ -13,7 +27,7 @@ function Header() {
       </div>
       <nav>
         <NavLink to='/chatrooms/search'>Parlor Rooms</NavLink>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
       </nav>
       <Outlet />
     </header>

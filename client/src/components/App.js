@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Header />}>
+        <Route path="/" element={<Header setUser={setUser}/>}>
           <Route path="chatrooms/search" element={<h1>Test Route</h1>}/>
 
         </Route>
