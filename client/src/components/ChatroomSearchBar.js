@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-function ChatroomSearchBar({ search, setSearch, sortBy, setSortBy }) { 
+function ChatroomSearchBar({ search, setSearch, searchBy, setSearchBy }) { 
   function handleSearchChange(e) {
     setSearch(search => e.target.value)
   }
 
   function handleRadioChange(e) {
-    setSortBy(sortBy => e.target.value)
+    setSearchBy(searchBy => e.target.value)
   }
 
   return (
@@ -23,9 +23,9 @@ function ChatroomSearchBar({ search, setSearch, sortBy, setSortBy }) {
           <label>
             <input 
               type='radio' 
-              name='sort' 
+              name='search' 
               value='name'
-              checked={sortBy === 'name'} 
+              checked={searchBy === 'name'} 
               onChange={handleRadioChange}
             />
             By Name
@@ -33,9 +33,9 @@ function ChatroomSearchBar({ search, setSearch, sortBy, setSortBy }) {
           <label>
             <input 
               type='radio' 
-              name='sort' 
+              name='search' 
               value='user' 
-              checked={sortBy === 'user'}
+              checked={searchBy === 'user'}
               onChange={handleRadioChange}
             /> 
             By User
