@@ -30,16 +30,6 @@ function ChatroomSearchBar({ search, setSearch, searchBy, setSearchBy }) {
             />
             By Name
           </label>
-          <label>
-            <input 
-              type='radio' 
-              name='search' 
-              value='user' 
-              checked={searchBy === 'user'}
-              onChange={handleRadioChange}
-            /> 
-            By User
-          </label>
         </fieldset>
       </div>
     </div>
