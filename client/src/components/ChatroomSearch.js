@@ -44,7 +44,7 @@ function ChatroomSearch() {
   }
 
   return (
-    <div>
+    <div className='chatroom-search'>
       <ChatroomSearchBar search={search} setSearch={setSearch} searchBy={searchBy} setSearchBy={setSearchBy}/>
       <ChatroomSearchList searchResults={chatroomSearchResults()}/>
     </div> 
