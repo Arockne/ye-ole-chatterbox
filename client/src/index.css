@@ -100,6 +100,13 @@ header nav {
 /******************************/
 
 /******* Chatroom Search *****/
+.chatroom-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
 .chatroom-search-bar input[type=text]{
   font-size: 1.1rem;
   border-radius: 10px;
