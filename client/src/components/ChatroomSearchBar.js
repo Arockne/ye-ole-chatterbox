@@ -10,7 +10,7 @@ function ChatroomSearchBar({ search, setSearch, searchBy, setSearchBy }) {
   }
 
   return (
-    <div>
+    <div className='chatroom-search-bar'>
       <div>
         <input 
           type='text'
