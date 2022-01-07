@@ -99,24 +99,29 @@ header nav {
 }
 
 /******* Chatroom Search *****/
+.chatroom-search-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .search-item {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-column-start: 2;
   grid-column-end: 4;
-  text-align: center;
-  border: 2px solid black;
-  border-radius: 10px;
-  margin: 1rem 0;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  margin: 1rem 0;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px black;
 }
 .search-item img {
   margin: 1rem 1rem;
+  width: 5.625rem;
 }
 
-
-.chatroom-search-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+.search-item p {
+  margin: 1rem;
 }
