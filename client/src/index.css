@@ -120,7 +120,7 @@ header nav {
   display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  height: 40rem;
+  height: 37rem;
   overflow: auto;
 }
 
