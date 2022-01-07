@@ -6,7 +6,7 @@ function ChatroomSearchListItem({ chatroom }) {
   const { name, image_url, bio } = chatroom
   return (
     <div className='search-item'>
-      <img src={image_url || logo} alt={image_url === '' ? 'moustache man' : 'chatroom image'} width='90rem'/>
+      <img src={image_url || logo} alt={image_url === '' ? 'moustache man' : 'chatroom image'} />
       <h3>{name}</h3>
       <p>{bio}</p>
     </div>
