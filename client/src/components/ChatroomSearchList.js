@@ -1,8 +1,13 @@
 import React from 'react'
+import ChatroomSearchListItem from './ChatroomSearchListItem'
 
-function ChatroomSearchList() {
+function ChatroomSearchList({ searchResults }) {
   return (
-    <div></div>
+    <div>
+      {
+        searchResults.map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom}/>)
+      }
+    </div>
   )
 }
 
