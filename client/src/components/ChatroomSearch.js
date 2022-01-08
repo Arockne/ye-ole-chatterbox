@@ -38,7 +38,8 @@ const chatrooms = [
 function ChatroomSearch() {
   const [search, setSearch] = useState('')
   const [searchBy, setSearchBy] = useState('name')
-
+  const [selectedChatroom, setSelectedChatroom] = useState(0)
+  
   function chatroomSearchResults() {
     return chatrooms.filter(chatroom => chatroom[searchBy].toLowerCase().includes(search.toLowerCase()))
   }
@@ -46,7 +47,12 @@ function ChatroomSearch() {
   return (
     <div className='chatroom-search'>
       <ChatroomSearchBar search={search} setSearch={setSearch} searchBy={searchBy} setSearchBy={setSearchBy}/>
-      <ChatroomSearchList searchResults={chatroomSearchResults()}/>
+      <ChatroomSearchList 
+        searchResults={chatroomSearchResults()}
+        selectedChatroom={selectedChatroom}
+        setSelectedChatroom={setSelectedChatroom}
+      />
+
     </div> 
   )
 }
