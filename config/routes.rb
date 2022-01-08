@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post '/signup', to: 'users#create'
 
     resources :chatrooms, only: [:index]
+    resources :chatroom_memberships, only: [:create]
   end
 
   get '*path',
