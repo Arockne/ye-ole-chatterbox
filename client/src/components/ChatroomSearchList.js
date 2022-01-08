@@ -5,7 +5,7 @@ function ChatroomSearchList({ searchResults, selectedChatroom, setSelectedChatro
   return (
     <div className='chatroom-search-grid'>
       {
-        searchResults.map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} setSelectedChatroom={setSelectedChatroom}/>)
+        searchResults.map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} setSelectedChatroom={setSelectedChatroom}/>)
       }
     </div>
   )

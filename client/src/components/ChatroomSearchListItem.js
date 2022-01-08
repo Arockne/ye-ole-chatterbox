@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../images/moustache-man.jpg'
 
 
-function ChatroomSearchListItem({ chatroom, setSelectedChatroom }) {
+function ChatroomSearchListItem({ chatroom, selectedChatroom, setSelectedChatroom }) {
   const { id, name, image_url, bio } = chatroom
 
   function handleChatroomClick() {
@@ -10,7 +10,7 @@ function ChatroomSearchListItem({ chatroom, setSelectedChatroom }) {
   }
 
   return (
-    <div className='search-item' onClick={handleChatroomClick}>
+    <div className={selectedChatroom === id ? 'search-item selected' : 'search-item'} onClick={handleChatroomClick}>
       <img src={image_url || logo} alt={image_url === '' ? 'moustache man' : 'chatroom image'} />
       <h3>{name}</h3>
       <p>{bio}</p>
