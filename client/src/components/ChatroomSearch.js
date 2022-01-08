@@ -14,6 +14,23 @@ function ChatroomSearch() {
     .then(data => setChatrooms(data))
   }, [])
 
+  function handleChatroomJoin() {
+    fetch('/api/chatroom_memberships', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ chatroom_id: selectedChatroom })
+    })
+    .then(r => {
+      if (r.ok) {
+        r.json().then()
+      } else {
+        r.json()
+      }
+    })
+  }
+
   function chatroomSearchResults() {
     return chatrooms.filter(chatroom => chatroom[searchBy].toLowerCase().includes(search.toLowerCase()))
   }
@@ -26,7 +43,7 @@ function ChatroomSearch() {
         selectedChatroom={selectedChatroom}
         setSelectedChatroom={setSelectedChatroom}
       />
-      <button className='submit-button'>Join Parlor Room</button>
+      <button className='submit-button' onClick={handleChatroomJoin}>Join Parlor Room</button>
     </div> 
   )
 }
