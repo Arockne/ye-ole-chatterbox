@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Seeding...'
+
 Chatroom.create ([
   {
     name: 'Jolly Good Chatter',
@@ -32,3 +35,5 @@ Chatroom.create ([
     bio: 'I can see it in your eyes, I can see it in your smile.'
   }
 ])
+
+puts 'Seeding Complete'
