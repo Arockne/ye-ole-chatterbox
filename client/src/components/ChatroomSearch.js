@@ -7,6 +7,7 @@ function ChatroomSearch() {
   const [search, setSearch] = useState('')
   const [searchBy, setSearchBy] = useState('name')
   const [selectedChatroom, setSelectedChatroom] = useState(0)
+  const [errors, setErrors] = useState([])
   
   useEffect(() => {
     fetch('/api/chatrooms')
@@ -26,7 +27,7 @@ function ChatroomSearch() {
       if (r.ok) {
         r.json().then()
       } else {
-        r.json()
+        r.json().then(({errors}) => setErrors(errors))
       }
     })
   }
@@ -43,6 +44,9 @@ function ChatroomSearch() {
         selectedChatroom={selectedChatroom}
         setSelectedChatroom={setSelectedChatroom}
       />
+      {
+        errors.map(error => <p key={error}>{error}</p>)
+      }
       <button className='submit-button' onClick={handleChatroomJoin}>Join Parlor Room</button>
     </div> 
   )
