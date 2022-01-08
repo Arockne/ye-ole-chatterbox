@@ -52,7 +52,7 @@ function ChatroomSearch() {
         selectedChatroom={selectedChatroom}
         setSelectedChatroom={setSelectedChatroom}
       />
-
+      <button className='submit-button'>Join Parlor Room</button>
     </div> 
   )
 }
