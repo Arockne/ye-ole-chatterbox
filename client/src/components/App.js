@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from './Login'
 import Header from './Header'
 import ChatroomSearch from "./ChatroomSearch";
+import MembershipNav from "./MembershipNav";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -49,6 +50,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership}/>}/>
+          <Route index element={<MembershipNav />}/>
         </Route>
       </Routes>
     </div>
