@@ -49,8 +49,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
+          <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}/>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership}/>}/>
-          <Route index element={<MembershipNav />}/>
+          <Route index element={<MembershipNav memberships={user.memberships}/>}/>
         </Route>
       </Routes>
     </div>
