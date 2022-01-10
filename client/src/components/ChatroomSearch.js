@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ChatroomSearchBar from './ChatroomSearchBar'
 import ChatroomSearchList from './ChatroomSearchList'
 
-function ChatroomSearch() {
+function ChatroomSearch({ handleChatroomMembership }) {
   const [chatrooms, setChatrooms] = useState([])
   const [search, setSearch] = useState('')
   const [searchBy, setSearchBy] = useState('name')
@@ -25,7 +25,9 @@ function ChatroomSearch() {
     })
     .then(r => {
       if (r.ok) {
-        r.json().then()
+        r.json().then(chatroom => {
+          handleChatroomMembership(chatroom)
+        })
       } else {
         r.json().then(({errors}) => setErrors(errors))
       }

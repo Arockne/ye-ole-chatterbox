@@ -28,6 +28,14 @@ function App() {
     setUser(user => userUpdate)
   }
 
+  function handleChatroomMembership(chatroom) {
+    setUser(user => {
+      const updatedUser = { ...user }
+      updatedUser.memberships = [ ...user.memberships, chatroom ]
+      return updatedUser;
+    })
+  }
+
   if (!loaded) {
     return <div></div>
   }
@@ -40,7 +48,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
-          <Route path="chatrooms/search" element={<ChatroomSearch />}/>
+          <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership}/>}/>
         </Route>
       </Routes>
     </div>
