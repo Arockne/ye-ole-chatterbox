@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from './Login'
 import Header from './Header'
+import Chatroom from "./Chatroom";
 import ChatroomSearch from "./ChatroomSearch";
 import MembershipNav from "./MembershipNav";
 
@@ -49,7 +50,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
-          <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}/>
+          <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
+            <Route path=":id" element={<Chatroom />}/>
+          </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership}/>}/>
           <Route index element={<MembershipNav memberships={user.memberships}/>}/>
         </Route>
