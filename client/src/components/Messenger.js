@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Messenger() {
+  const [message, setMessage] = useState('')
+
+  function handleMessageChange(e) {
+    setMessage(message => e.target.value)
+  }
+
   return (
-    <div></div>
+    <div>
+      <form>
+        <input 
+          type='text'
+          value={message}
+          onChange={handleMessageChange}
+        />
+      </form>
+    </div>
   )
 }
 
