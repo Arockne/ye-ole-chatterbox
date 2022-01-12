@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ChatroomHeader from './ChatroomHeader'
 import Messages from './Messages'
 import Members from './Members'
+import Messenger from './Messenger'
 
 function Chatroom() {
   const [chatroom, setChatroom] = useState({})
@@ -32,6 +33,7 @@ function Chatroom() {
       <ChatroomHeader name={chatroom.name}/>
       <Messages communications={chatroom.communications}/>
       <Members members={chatroom.members}/>
+      <Messenger />
     </div>
   )
 }
