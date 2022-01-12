@@ -1,4 +1,5 @@
 class Api::ChatroomsController < ApplicationController
+rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   # before_action :chatroom_authorization
   # skip_before_action :chatroom_authorization, only: [:index]
 
@@ -11,6 +12,12 @@ class Api::ChatroomsController < ApplicationController
     chatroom = Chatroom.find(params[:id])
     render json: chatroom, status: :ok, serializer: ChatroomShowSerializer
   end 
+
+  private
+
+  def render_not_found
+    render json: { errors: ["Chatroom does not exist"] }, status: :not_found
+  end
 
   # private
 
