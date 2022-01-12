@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ChatroomSearchBar from './ChatroomSearchBar'
 import ChatroomSearchList from './ChatroomSearchList'
 
@@ -8,6 +9,8 @@ function ChatroomSearch({ handleChatroomMembership }) {
   const [searchBy, setSearchBy] = useState('name')
   const [selectedChatroom, setSelectedChatroom] = useState(0)
   const [errors, setErrors] = useState([])
+
+  const navigate = useNavigate()
   
   useEffect(() => {
     fetch('/api/chatrooms')
@@ -27,6 +30,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
       if (r.ok) {
         r.json().then(chatroom => {
           handleChatroomMembership(chatroom)
+          navigate(`/chatrooms/${chatroom.id}`)
         })
       } else {
         r.json().then(({errors}) => setErrors(errors))
