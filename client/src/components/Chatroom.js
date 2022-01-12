@@ -25,7 +25,7 @@ function Chatroom() {
 
   return (
     <div>
-      <ChatroomHeader />
+      <ChatroomHeader name={chatroom.name}/>
       <Messages />
       <Members />
     </div>

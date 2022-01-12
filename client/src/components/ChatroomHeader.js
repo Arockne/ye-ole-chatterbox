@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ChatroomHeader() {
+function ChatroomHeader({ name }) {
   return (
     <header>
-      <h1>This is the chatroom header</h1>
+      <h1>{name}</h1>
     </header>
   )
 }
