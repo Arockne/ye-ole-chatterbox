@@ -36,4 +36,26 @@ Chatroom.create ([
   }
 ])
 
+first_user = User.create(username: 'pippin', password: 'notsafe', password_confirmation: 'notsafe')
+second_user = User.create(username: 'billy', password: 'notsafe', password_confirmation: 'notsafe')
+
+first_chatroom = Chatroom.first
+first_chatroom.chatroom_memberships.create(user: first_user)
+first_chatroom.chatroom_memberships.create(user: second_user)
+first_user.communications.create(message: 'What a mighty fine chatting application', chatroom: first_chatroom)
+second_user.communications.create(message: 'Indubitably, chatting of this magnitude shall be henceforth be known to the', chatroom: first_chatroom)
+first_user.communications.create(message: 'Ave, Caesar, morituri te salutant', chatroom: first_chatroom)
+
+second_chatroom = Chatroom.second
+second_chatroom.chatroom_memberships.create(user: first_user)
+first_user.communications.create(message: 'ALL BY MYSEEELLFFFFF', chatroom: second_chatroom)
+first_user.communications.create(message: 'Dont wanna be....', chatroom: second_chatroom)
+first_user.communications.create(message: 'ALL BY MYSEEELLFFFFF, anymore', chatroom: second_chatroom)
+
+
+third_chatroom = Chatroom.third
+third_chatroom.chatroom_memberships.create(user: second_user)
+second_user.communications.create(message: 'WOW, so cool', chatroom: third_chatroom)
+second_user.communications.create(message: 'ah I see it now', chatroom: third_chatroom)
+second_user.communications.create(message: 'The light is coming, I see it', chatroom: third_chatroom)
 puts 'Seeding Complete'
