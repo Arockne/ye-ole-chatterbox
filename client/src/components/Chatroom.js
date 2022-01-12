@@ -23,10 +23,14 @@ function Chatroom() {
     })
   }, [id])
 
+  if (Object.keys(chatroom).length === 0) {
+    return <div></div>
+  }
+
   return (
     <div>
       <ChatroomHeader name={chatroom.name}/>
-      <Messages />
+      <Messages communications={chatroom.communications}/>
       <Members />
     </div>
   )
