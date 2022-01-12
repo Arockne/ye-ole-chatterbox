@@ -1,8 +1,11 @@
 import React from 'react'
 
-function Member() {
+function Member({ member }) {
+  const {id, username} = member
   return (
-    <div></div>
+    <div>
+      <p>{username}</p>
+    </div>
   )
 }
 

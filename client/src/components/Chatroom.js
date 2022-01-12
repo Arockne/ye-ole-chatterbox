@@ -31,7 +31,7 @@ function Chatroom() {
     <div>
       <ChatroomHeader name={chatroom.name}/>
       <Messages communications={chatroom.communications}/>
-      <Members />
+      <Members members={chatroom.members}/>
     </div>
   )
 }
