@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     get '/me', to: 'users#show'
     post '/signup', to: 'users#create'
 
-    resources :chatrooms, only: [:index, :show]
+    resources :chatrooms, only: [:index, :show] do
+      resources :communications, only: [:create]
+    end
     resources :chatroom_memberships, only: [:create]
   end
 
