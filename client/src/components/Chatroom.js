@@ -16,10 +16,13 @@ function Chatroom() {
     .then(r => {
       if (r.ok) {
         r.json().then(data => {
+          setErrors([])
           setChatroom(data)
         })
       } else {
-        r.json().then(e => setErrors(e.errors))
+        r.json().then(e => {
+          setErrors(e.errors)
+        })
       }
     })
   }, [id])
@@ -32,17 +35,25 @@ function Chatroom() {
     })
   }
 
-  if (Object.keys(chatroom).length === 0) {
-    return <div></div>
+  function handleErrors() {
+    if (errors.length === 0) {
+      return <div></div>
+    } else {
+      return <div>{errors.map(e => <p key={e}>{e}</p>)}</div>
+    }
   }
 
   return (
-    <div>
-      <ChatroomHeader name={chatroom.name}/>
-      <Messages communications={chatroom.communications}/>
-      <Members members={chatroom.members}/>
-      <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage}/>
-    </div>
+    chatroom.name ? (
+      <div>
+        <ChatroomHeader name={chatroom.name}/>
+        <Messages communications={chatroom.communications}/>
+        <Members members={chatroom.members}/>
+        <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage}/>
+      </div>
+    ) : (
+      handleErrors()
+    )
   )
 }
 
