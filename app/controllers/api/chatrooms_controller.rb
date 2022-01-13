@@ -1,7 +1,7 @@
 class Api::ChatroomsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-  # before_action :chatroom_authorization
-  # skip_before_action :chatroom_authorization, only: [:index]
+  before_action :chatroom_authorization
+  skip_before_action :chatroom_authorization, only: [:index]
 
   def index
     chatrooms = Chatroom.all
@@ -21,12 +21,12 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   # private
 
-  # def is_member?
-  #   chatroom.find(params[:id]).members.include? @user
-  # end
+  def is_member?
+    Chatroom.find(params[:id]).members.include? current_user
+  end
 
-  # def chatroom_authorization
-  #   render json: { errors: ["Not authorized"]}, status: :unauthorized unless is_member?
-  # end
+  def chatroom_authorization
+    render json: { errors: ["Not authorized"]}, status: :unauthorized unless is_member?
+  end
 
 end
