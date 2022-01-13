@@ -25,7 +25,7 @@ function Header({ setUser }) {
         <div>
           <Link className='heading' to='/'>
             <h1>Ye Ole ChatterBox</h1>
-            <img src={logo} alt='moustache man' width='30px'/> 
+            <img src={logo} alt='moustache man' /> 
           </Link>
         </div>
         <nav>
