@@ -1,19 +1,44 @@
 import React, { useState } from 'react'
 
-function Messenger() {
+function Messenger({ chatroom, handleChatroomMessage }) {
   const [message, setMessage] = useState('')
 
   function handleMessageChange(e) {
-    setMessage(message => e.target.value)
+    setMessage(e.target.value)
+  }
+
+  function handleMessageSubmit(e) {
+    e.preventDefault()
+    fetch(`/api/chatrooms/${chatroom}/communications`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message })
+    })
+    .then(r => {
+      if (r.ok) {
+        r.json().then(message => {
+          handleChatroomMessage(message)
+          setMessage('')
+        })
+      } else {
+
+      }
+    })
   }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleMessageSubmit}>
         <input 
           type='text'
           value={message}
           onChange={handleMessageChange}
+        />
+        <input 
+          type='submit'
+          value='Send Message'
         />
       </form>
     </div>

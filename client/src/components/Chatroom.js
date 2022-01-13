@@ -24,6 +24,14 @@ function Chatroom() {
     })
   }, [id])
 
+  function handleChatroomMessage(message) {
+    setChatroom(chatroom => {
+      const updatedChatroom = { ...chatroom }
+      updatedChatroom.communications = [ ...chatroom.communications, message ]
+      return updatedChatroom
+    })
+  }
+
   if (Object.keys(chatroom).length === 0) {
     return <div></div>
   }
@@ -33,7 +41,7 @@ function Chatroom() {
       <ChatroomHeader name={chatroom.name}/>
       <Messages communications={chatroom.communications}/>
       <Members members={chatroom.members}/>
-      <Messenger />
+      <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage}/>
     </div>
   )
 }
