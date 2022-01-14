@@ -9,11 +9,9 @@ function MembershipNav({ memberships }) {
         <h3>Chatter engaged in:</h3>
         {
           memberships.map(({id, name, image_url}) => {
-            return <NavLink key={id} to={`/chatrooms/${id}`}>
-              <div>
-                <img src={image_url || logo} alt={image_url === '' ? 'moustache man' : 'chatroom image'} width='35px'/>
-                <h4>{name}</h4>
-              </div>
+            return <NavLink className='membership-nav-button' key={id} to={`/chatrooms/${id}`}>
+              <img src={image_url || logo} alt={image_url === '' ? 'moustache man' : 'chatroom image'} />
+              <h4>{name}</h4>
             </NavLink>
           })
         }
