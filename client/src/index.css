@@ -241,7 +241,7 @@ input[type=radio]:checked {
 
 .message {
   display: grid;
-  grid-template-columns: 1fr 15fr;
+  grid-template-columns: 1fr 20fr;
   align-items: start;
 }
 
