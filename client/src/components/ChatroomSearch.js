@@ -50,10 +50,12 @@ function ChatroomSearch({ handleChatroomMembership }) {
         selectedChatroom={selectedChatroom}
         setSelectedChatroom={setSelectedChatroom}
       />
-      {
-        errors.map(error => <p key={error}>{error}</p>)
-      }
-      <button className='submit-button' onClick={handleChatroomJoin}>Join Parlor Room</button>
+      <div className='chatroom-search-error'>
+        {
+          errors.map(error => <p key={error}>{error}</p>)
+        }
+      </div>
+      <button className='search-submit-button' onClick={handleChatroomJoin}>Join Parlor Room</button>
     </div> 
   )
 }
