@@ -29,7 +29,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
   }
 
   return (
-    <div>
+    <div className='messenger'>
       <form onSubmit={handleMessageSubmit}>
         <input 
           type='text'

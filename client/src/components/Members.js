@@ -3,7 +3,7 @@ import Member from './Member'
 
 function Members({ members }) {
   return (
-    <div>
+    <div className='members'>
       <h3>Members:</h3>
       <div>
         {

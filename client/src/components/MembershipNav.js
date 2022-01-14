@@ -4,7 +4,7 @@ import logo from '../images/moustache-man.jpg'
 
 function MembershipNav({ memberships }) {
   return (
-    <div>
+    <div className='membership-nav'>
       <nav>
         <h3>Chatter engaged in:</h3>
         {

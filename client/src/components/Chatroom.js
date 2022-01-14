@@ -45,7 +45,7 @@ function Chatroom() {
 
   return (
     chatroom.name ? (
-      <div>
+      <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
         <Messages communications={chatroom.communications}/>
         <Members members={chatroom.members}/>
