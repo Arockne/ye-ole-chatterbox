@@ -174,7 +174,7 @@ input[type=radio]:checked {
 .membership-nav {
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-template-rows: 40rem;
+  grid-template-rows: 51rem;
 }
 
 .membership-nav nav {
@@ -231,10 +231,10 @@ input[type=radio]:checked {
 .messages {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   grid-column: 1 / span 8;
   grid-row: 2 / span 7;
   overflow: auto;
-  gap: 1.5rem;
 }
 
 .message {
