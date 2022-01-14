@@ -5,7 +5,7 @@ function Message({ communication }) {
   const { id, created_at, message, creator} = communication
 
   return (
-    <div>
+    <div className='message'>
       <img src={creator.image_url || logo} alt={creator.image_url === '' ? 'moustache man' : 'chatroom image'} />
       <div>
         <h5>{`${creator.username} ${created_at}`}</h5>
