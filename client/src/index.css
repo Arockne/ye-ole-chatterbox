@@ -272,7 +272,23 @@ input[type=radio]:checked {
 }
 
 .messenger {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
   grid-column: 1 / span 8;
   grid-row: 9 / 9;
   border-top: 2px solid black;
+  text-align: center;
+}
+.messenger form {
+  grid-column: 1 / span 5;
+  width: 100%;
+}
+
+.messenger form [type=text] {
+  font-size: 1rem;
+  border-radius: 10px;
+  width: 80%;
+  margin: 1rem;
 }

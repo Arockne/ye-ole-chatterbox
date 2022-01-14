@@ -38,7 +38,8 @@ function Messenger({ chatroom, handleChatroomMessage }) {
         />
         <input 
           type='submit'
-          value='Send Message'
+          value='Send'
+          className='submit-button'
         />
       </form>
     </div>
