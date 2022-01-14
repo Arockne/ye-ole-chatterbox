@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../images/moustache-man.jpg'
 
 function Message({ communication }) {
-  const { id, created_at, message, creator} = communication
+  const { created_at, message, creator} = communication
 
   return (
     <div className='message'>
