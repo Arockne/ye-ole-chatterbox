@@ -58,7 +58,7 @@
 
 /****** Header *******/
 
-header {
+.main-header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -82,7 +82,7 @@ header {
   margin-bottom: .2rem
 }
 
-header nav {
+.main-header nav {
   display: flex;
   align-items: flex-end;
   margin-right: 5rem;

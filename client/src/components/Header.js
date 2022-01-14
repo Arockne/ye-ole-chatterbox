@@ -21,7 +21,7 @@ function Header({ setUser }) {
 
   return (
     <div>
-      <header>
+      <header className='main-header'>
         <div>
           <Link className='heading' to='/'>
             <h1>Ye Ole ChatterBox</h1>
