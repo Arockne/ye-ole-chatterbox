@@ -7,8 +7,8 @@ function Message({ communication }) {
   return (
     <div className='message'>
       <img src={creator.image_url || logo} alt={creator.image_url === '' ? 'moustache man' : 'chatroom image'} />
-      <div>
-        <h5>{`${creator.username} ${created_at}`}</h5>
+      <div className='content'>
+        <h5><span className='creator'>{creator.username}</span> {created_at}</h5>
         <p>{message}</p>
       </div>
     </div>

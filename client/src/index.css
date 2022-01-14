@@ -234,10 +234,39 @@ input[type=radio]:checked {
   grid-column: 1 / span 8;
   grid-row: 2 / span 7;
   overflow: auto;
+  gap: 1.5rem;
+}
+
+.message {
+  display: grid;
+  grid-template-columns: 1fr 15fr;
+  align-items: start;
+}
+
+.message .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 1.2rem;
+}
+
+.content .creator {
+  font-size: 1.2rem;
+  color: black;
+  margin-right: .5rem;
+}
+
+.content h5 {
+  margin: 0;
+  color: gainsboro;
+}
+
+.content p {
+  margin: 0;
 }
 
 .message img {
-  width: 2rem;
+  width: 3rem;
 }
 
 .messenger {
