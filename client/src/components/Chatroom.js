@@ -4,6 +4,7 @@ import ChatroomHeader from './ChatroomHeader'
 import Messages from './Messages'
 import Members from './Members'
 import Messenger from './Messenger'
+import ChatroomWithdrawal from './ChatroomWithdrawal'
 
 function Chatroom() {
   const [chatroom, setChatroom] = useState({})
@@ -49,6 +50,7 @@ function Chatroom() {
         <ChatroomHeader name={chatroom.name}/>
         <Messages communications={chatroom.communications}/>
         <Members members={chatroom.members}/>
+        <ChatroomWithdrawal />
         <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage}/>
       </div>
     ) : (

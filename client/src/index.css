@@ -244,10 +244,17 @@ input[type=radio]:checked {
 
 .members {
   grid-column: 9 / span 1;
-  grid-row: 2 / span 9;
+  grid-row: 2 / span 7;
   border-left: 2px solid black;
   padding-left: 1rem;
   overflow: auto;
+}
+
+.chatroom-withdrawal {
+  grid-column: 9 / span 1;
+  grid-row: 9 / span 1;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
 }
 
 .messages {
