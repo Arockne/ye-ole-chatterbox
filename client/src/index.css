@@ -329,3 +329,9 @@ input[type=radio]:checked {
   width: 80%;
   margin: 1rem;
 }
+
+@media (height < 800px) {
+  .membership-nav {
+    grid-template-rows: 40rem;
+  }
+}
