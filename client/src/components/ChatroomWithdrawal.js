@@ -1,12 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function ChatroomWithdrawal({ chatroom, user, handleUserChatroomMembershipWithdrawal }) {
-  const currentMember = chatroom.chatroom_memberships.find(({ user_id }) => user_id === user.id)
+function ChatroomWithdrawal({ currentMember, handleUserChatroomMembershipWithdrawal }) {
   const navigate = useNavigate()
-  
+
   function handleChatroomWithdrawal() {
-    fetch(`/api/chatrooms/${chatroom.id}/chatroom_memberships/${currentMember.id}`, {
+    fetch(`/api/chatrooms/${currentMember.chatroom_id}/chatroom_memberships/${currentMember.id}`, {
       method: 'DELETE'
     })
     .then(r => {

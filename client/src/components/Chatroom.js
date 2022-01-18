@@ -44,13 +44,15 @@ function Chatroom({ user, handleUserChatroomMembershipWithdrawal }) {
     }
   }
 
+  const currentMember = chatroom.id && chatroom.chatroom_memberships.find(({ user_id }) => user_id === user.id)
+
   return (
     chatroom.name ? (
       <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
         <Messages communications={chatroom.communications}/>
         <Members members={chatroom.members}/>
-        <ChatroomWithdrawal chatroom={chatroom} user={user} handleUserChatroomMembershipWithdrawal={handleUserChatroomMembershipWithdrawal}/>
+        <ChatroomWithdrawal currentMember={currentMember} handleUserChatroomMembershipWithdrawal={handleUserChatroomMembershipWithdrawal}/>
         <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />
       </div>
     ) : (
