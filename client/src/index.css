@@ -105,7 +105,7 @@
 /******* Chatroom Search *****/
 .chatroom-search {
   display: grid;
-  grid: repeat(7, 1fr) / repeat(4, 1fr) 1.5fr repeat(4, 1fr);
+  grid: repeat(8, 1fr) / repeat(4, 1fr) 1.5fr repeat(4, 1fr);
   height: 50rem;
 }
 
@@ -159,18 +159,20 @@
 }
 
 .chatroom-search-error {
-  grid-column: 4 / span 3;
+  grid-column: 3 / span 5;
   grid-row: 7 / span 1;
   text-align: center;
-  align-self: start;
+  align-self: center;
   font-size: 1.5rem;
 }
 
 .search-submit-button {
-  grid-column: 5 / span 1;
-  grid-row: 7 / span 1;
-  align-self: end;
+  grid-column: 4 / span 3;
+  grid-row: 8 / span 1;
+  align-self: start;
+  justify-self: center;
   cursor: pointer;
+  margin: 0;
 }
 
 /******************************/
