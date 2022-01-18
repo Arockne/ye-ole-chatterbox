@@ -251,10 +251,18 @@ input[type=radio]:checked {
 }
 
 .chatroom-withdrawal {
+  display: flex;
+  align-items: center;
   grid-column: 9 / span 1;
   grid-row: 9 / span 1;
   border-top: 2px solid black;
   border-left: 2px solid black;
+  padding-left: 1rem;
+}
+
+.chatroom-withdrawal button {
+  font-size: .75rem;
+  font-weight: bold;
 }
 
 .messages {

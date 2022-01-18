@@ -22,6 +22,7 @@ function ChatroomWithdrawal({ currentMember, handleUserChatroomMembershipWithdra
     <div className='chatroom-withdrawal'>
       <button
         onClick={handleChatroomWithdrawal}
+        className='submit-button'
       >Leave Chatroom</button>
     </div>
   )
