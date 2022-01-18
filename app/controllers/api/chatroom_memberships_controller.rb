@@ -7,6 +7,13 @@ class Api::ChatroomMembershipsController < ApplicationController
     render json: chatroom, status: :created, serializer: UserMembershipSerializer
   end
 
+  def destroy
+    chatroom = Chatroom.find(params[:chatroom_id])
+    membership = current_user.chatroom_memberships.find_by(chatroom: chatroom)
+    membership.destroy
+    render json: chatroom, status: :ok
+  end
+
   private
 
   def render_not_found

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [:index, :show] do
       resources :communications, only: [:create]
     end
-    resources :chatroom_memberships, only: [:create]
+    resources :chatroom_memberships, only: [:create, :destroy]
   end
 
   get '*path',
