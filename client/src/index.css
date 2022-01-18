@@ -334,4 +334,7 @@ input[type=radio]:checked {
   .membership-nav {
     grid-template-rows: 40rem;
   }
+  .chatroom-search {
+    height: 40.68rem;
+  }
 }
