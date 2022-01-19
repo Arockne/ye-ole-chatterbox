@@ -30,9 +30,9 @@ Chatroom.create ([
     bio: 'Most luxurious form of chatting about fine art'
   },
   {
-    name: 'Hello, is it me you looking for?',
+    name: 'Book club',
     image_url: '',
-    bio: 'I can see it in your eyes, I can see it in your smile.'
+    bio: 'Chatter about most cherished books'
   }
 ])
 
