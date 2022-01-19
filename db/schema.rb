@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(version: 2022_01_12_154637) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "communications", force: :cascade do |t|
-    t.text "message"
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
     t.bigint "user_id", null: false
     t.bigint "chatroom_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["chatroom_id"], name: "index_communications_on_chatroom_id"
-    t.index ["user_id"], name: "index_communications_on_user_id"
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 2022_01_12_154637) do
 
   add_foreign_key "chatroom_memberships", "chatrooms"
   add_foreign_key "chatroom_memberships", "users"
-  add_foreign_key "communications", "chatrooms"
-  add_foreign_key "communications", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end

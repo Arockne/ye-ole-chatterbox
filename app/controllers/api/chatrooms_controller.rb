@@ -10,7 +10,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
   def show
     chatroom = Chatroom.find(params[:id])
-    render json: chatroom, status: :ok, serializer: ChatroomShowSerializer, include: ['communications', 'communications.user', 'chatroom_memberships', 'members']
+    render json: chatroom, status: :ok, serializer: ChatroomShowSerializer, include: ['messages', 'messages.user', 'chatroom_memberships', 'members']
   end 
 
   private

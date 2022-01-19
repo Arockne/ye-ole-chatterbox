@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post '/signup', to: 'users#create'
 
     resources :chatrooms, only: [:index, :show] do
-      resources :communications, only: [:create]
+      resources :messages, only: [:create]
       resources :chatroom_memberships, only: [:destroy]
     end
     resources :chatroom_memberships, only: [:create]

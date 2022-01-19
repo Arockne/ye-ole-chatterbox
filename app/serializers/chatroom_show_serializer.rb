@@ -3,5 +3,5 @@ class ChatroomShowSerializer < ActiveModel::Serializer
 
   has_many :chatroom_memberships
   has_many :members, serializer: MemberSerializer
-  has_many :communications
+  has_many :messages
 end
