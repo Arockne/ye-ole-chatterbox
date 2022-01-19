@@ -1,17 +1,17 @@
 import React, { useRef, useEffect } from 'react'
 import Message from './Message'
 
-function Messages({ communications }) {
+function Messages({ messages }) {
   const messageEndRef = useRef(null)
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-  }, [communications])
+  }, [messages])
 
   return (
     <div className='messages'>
       {
-        communications.map(communication => <Message key={communication.id} communication={communication}/>)
+        messages.map(message => <Message key={message.id} message={message}/>)
       }
       <div ref={messageEndRef}/>
     </div>

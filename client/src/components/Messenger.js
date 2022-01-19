@@ -9,12 +9,12 @@ function Messenger({ chatroom, handleChatroomMessage }) {
 
   function handleMessageSubmit(e) {
     e.preventDefault()
-    fetch(`/api/chatrooms/${chatroom}/communications`, {
+    fetch(`/api/chatrooms/${chatroom}/messages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({ content: message })
     })
     .then(r => {
       if (r.ok) {

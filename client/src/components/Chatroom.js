@@ -31,7 +31,7 @@ function Chatroom({ user, handleUserChatroomMembershipWithdrawal }) {
   function handleChatroomMessage(message) {
     setChatroom(chatroom => {
       const updatedChatroom = { ...chatroom }
-      updatedChatroom.communications = [ ...chatroom.communications, message ]
+      updatedChatroom.messages = [ ...chatroom.messages, message ]
       return updatedChatroom
     })
   }
@@ -50,7 +50,7 @@ function Chatroom({ user, handleUserChatroomMembershipWithdrawal }) {
     chatroom.name ? (
       <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
-        <Messages communications={chatroom.communications}/>
+        <Messages messages={chatroom.messages}/>
         <Members members={chatroom.members}/>
         <ChatroomWithdrawal currentMember={currentMember} handleUserChatroomMembershipWithdrawal={handleUserChatroomMembershipWithdrawal}/>
         <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />
