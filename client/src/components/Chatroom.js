@@ -36,6 +36,19 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     })
   }
 
+  function handleMessageEdit(messageEdit) {
+    setChatroom(chatroom => {
+      const updatedChatroom = { ...chatroom }
+      updatedChatroom.messages = updatedChatroom.messages.map(message => {
+        if (message.id === messageEdit.id) {
+          return messageEdit;
+        }
+        return message;
+      })
+      return chatroom;
+    })
+  }
+
   function handleErrors() {
     if (errors.length === 0) {
       return <div></div>
@@ -55,7 +68,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
         <Routes>
           <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />}/>
-          <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />}/>
+          <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageEdit} />}/>
         </Routes>
       </div>
     ) : (

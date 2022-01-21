@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 function Messenger({ chatroom, handleChatroomMessage }) {
   const [message, setMessage] = useState('')
   const { messageId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (messageId) {
@@ -27,21 +28,40 @@ function Messenger({ chatroom, handleChatroomMessage }) {
 
   function handleMessageSubmit(e) {
     e.preventDefault()
-    fetch(`/api/chatrooms/${chatroom}/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ content: message })
-    })
-    .then(r => {
-      if (r.ok) {
-        r.json().then(message => {
-          handleChatroomMessage(message)
-          setMessage(() => '')
-        })
-      }
-    })
+    if (messageId) {
+      fetch(`/api/chatrooms/${chatroom}/messages/${messageId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ content: message })
+      })
+      .then(r => {
+        if (r.ok) {
+          r.json().then(message => {
+            handleChatroomMessage(message)
+            setMessage(() => '')
+            navigate(`/chatrooms/${chatroom}`)
+          })
+        }
+      })
+    } else {
+      fetch(`/api/chatrooms/${chatroom}/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ content: message })
+      })
+      .then(r => {
+        if (r.ok) {
+          r.json().then(message => {
+            handleChatroomMessage(message)
+            setMessage(() => '')
+          })
+        }
+      })
+    }
   }
 
   return (
