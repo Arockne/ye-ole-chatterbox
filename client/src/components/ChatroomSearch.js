@@ -19,12 +19,12 @@ function ChatroomSearch({ handleChatroomMembership }) {
   }, [])
 
   function handleChatroomJoin() {
-    fetch('/api/chatroom_memberships', {
+    fetch(`/api/chatrooms/${selectedChatroom}/chatroom_memberships`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ chatroom_id: selectedChatroom })
+      body: JSON.stringify({})
     })
     .then(r => {
       if (r.ok) {
