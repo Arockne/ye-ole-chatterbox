@@ -36,7 +36,7 @@ function SignUpForm({ handleUser }) {
         })
       } else {
         r.json().then(e => {
-          setErrors(e.errors)
+          setErrors(() => e.errors)
         })
       }
     })

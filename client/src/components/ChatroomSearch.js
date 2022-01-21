@@ -15,7 +15,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
   useEffect(() => {
     fetch('/api/chatrooms')
     .then(r => r.json())
-    .then(data => setChatrooms(data))
+    .then(data => setChatrooms(() => data))
   }, [])
 
   function handleChatroomJoin() {
@@ -33,7 +33,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
           navigate(`/chatrooms/${chatroom.id}`)
         })
       } else {
-        r.json().then(({errors}) => setErrors(errors))
+        r.json().then(({errors}) => setErrors(() => errors))
       }
     })
   }

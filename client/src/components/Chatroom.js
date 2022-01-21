@@ -18,11 +18,11 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
       if (r.ok) {
         r.json().then(data => {
           setErrors([])
-          setChatroom(data)
+          setChatroom(() => data)
         })
       } else {
         r.json().then(e => {
-          setErrors(e.errors)
+          setErrors(() => e.errors)
         })
       }
     })

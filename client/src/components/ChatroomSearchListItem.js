@@ -6,7 +6,7 @@ function ChatroomSearchListItem({ chatroom, selectedChatroom, setSelectedChatroo
   const { id, name, image_url, bio } = chatroom
 
   function handleChatroomClick() {
-    setSelectedChatroom(id)
+    setSelectedChatroom(() => id)
   }
 
   return (

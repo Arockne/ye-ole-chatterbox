@@ -27,7 +27,7 @@ function LoginForm({ handleUser }) {
     .then(r => {
       if (r.ok) {
         r.json().then(user => {
-          setFormData(data => defaultLoginFormData)
+          setFormData(() => defaultLoginFormData)
           handleUser(user)
         })
       } else {

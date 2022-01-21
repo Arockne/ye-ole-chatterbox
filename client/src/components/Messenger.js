@@ -4,7 +4,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
   const [message, setMessage] = useState('')
 
   function handleMessageChange(e) {
-    setMessage(e.target.value)
+    setMessage(() => e.target.value)
   }
 
   function handleMessageSubmit(e) {
@@ -20,7 +20,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
       if (r.ok) {
         r.json().then(message => {
           handleChatroomMessage(message)
-          setMessage('')
+          setMessage(() => '')
         })
       } else {
 
