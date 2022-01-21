@@ -17,7 +17,7 @@ class Api::ChatroomMembershipsController < ApplicationController
   private
 
   def render_not_found
-    render json: { errors: ['Chatroom does not exist']}, status: :not_found
+    render json: { errors: ['Please select a chatroom from the available choices']}, status: :not_found
   end
 
 end
