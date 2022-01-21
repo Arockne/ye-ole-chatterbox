@@ -1,6 +1,11 @@
 class Api::MessagesController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
+  def show
+    message = current_user.messages.find(params[:id])
+    render json: message, status: :ok
+  end
+
   def create
     message = current_user.messages.create!(message_params)
     render json: message, status: :created
