@@ -55,8 +55,6 @@
   align-self: center;
 }
 
-/******************************/
-
 /****** Header *******/
 
 .main-header {
@@ -100,9 +98,9 @@
   border-radius: 8px;
   cursor: pointer;
 }
-/******************************/
 
 /******* Chatroom Search *****/
+
 .chatroom-search {
   display: grid;
   grid: repeat(8, 1fr) / repeat(4, 1fr) 1.5fr repeat(4, 1fr);
@@ -175,9 +173,8 @@
   margin: 0;
 }
 
-/******************************/
-
 /***** Radio Button ******/
+
 input[type=radio] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -192,6 +189,8 @@ input[type=radio] {
 input[type=radio]:checked {
   background-color: black;
 }
+
+/******* Membership Navigation *****/
 
 .membership-nav {
   display: grid;
@@ -230,6 +229,8 @@ input[type=radio]:checked {
   margin: 0 .5rem 0;
   font-weight: normal;
 }
+
+/********* Chatroom ***********/
 
 .chatroom {
   display: grid;
