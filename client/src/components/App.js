@@ -46,16 +46,16 @@ function App() {
     })
   }
 
-  if (!authenticated) {
-    return <div></div>
+  function unauthorizedUser() {
+    if (!authenticated) {
+      return <div></div>
+    } else {
+      return <Login handleUser={handleUser}/>
+    }
   }
 
-  if (!user) {
-    return <Login handleUser={handleUser}/>
-  }
-
-  return (
-    <div className="App">
+  function authorizedUser() {
+    return (
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
@@ -65,6 +65,12 @@ function App() {
           <Route index element={<MembershipNav memberships={user.memberships}/>}/>
         </Route>
       </Routes>
+    )
+  }
+
+  return (
+    <div>
+      {!user ? ( unauthorizedUser() ) : ( authorizedUser() )}
     </div>
   );
 }
