@@ -6,7 +6,7 @@ function Messages({ messages, currentMember }) {
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
-  }, [messages])
+  }, [messages.length])
 
   return (
     <div className='messages'>
