@@ -1,8 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 function Messenger({ chatroom, handleChatroomMessage }) {
   const [message, setMessage] = useState('')
+  const { messageId } = useParams();
 
+  useEffect(() => {
+    if (messageId) {
+      fetch(`/api/messages/${messageId}`)
+      .then(r => {
+        if (r.ok) {
+          r.json().then(message => {
+            setMessage(() => message.content)
+          })
+        }
+      })
+    }
+    return () => {
+      setMessage(() => '')
+    }
+  }, [messageId])
+  
   function handleMessageChange(e) {
     setMessage(() => e.target.value)
   }
@@ -36,7 +54,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
         />
         <input 
           type='submit'
-          value='Send'
+          value={messageId ? 'Edit' : 'Send'}
           disabled={message.length === 0}
           className='submit-button'
         />
