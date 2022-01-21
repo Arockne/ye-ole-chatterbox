@@ -22,8 +22,6 @@ function Messenger({ chatroom, handleChatroomMessage }) {
           handleChatroomMessage(message)
           setMessage(() => '')
         })
-      } else {
-
       }
     })
   }
@@ -39,6 +37,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
         <input 
           type='submit'
           value='Send'
+          disabled={message.length === 0}
           className='submit-button'
         />
       </form>
