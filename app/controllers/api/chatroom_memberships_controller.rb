@@ -4,14 +4,14 @@ class Api::ChatroomMembershipsController < ApplicationController
   def create
     chatroom = Chatroom.find(params[:chatroom_id])
     chatroom.chatroom_memberships.create!(user: current_user)
-    render json: chatroom, status: :created, serializer: UserMembershipSerializer
+    render json: chatroom, status: :created
   end
 
   def destroy
     membership = ChatroomMembership.find(params[:id])
     membership.destroy
     chatroom = Chatroom.find(params[:chatroom_id])
-    render json: chatroom, status: :ok, serializer: UserMembershipSerializer
+    render json: chatroom, status: :ok
   end
 
   private
