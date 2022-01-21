@@ -22,12 +22,10 @@ function Header({ setUser }) {
   return (
     <div>
       <header className='main-header'>
-        <div>
-          <Link className='heading' to='/'>
-            <h1>Ye Ole ChatterBox</h1>
-            <img src={logo} alt='moustache man' /> 
-          </Link>
-        </div>
+        <Link className='heading' to='/'>
+          <h1>Ye Ole ChatterBox</h1>
+          <img src={logo} alt='moustache man' /> 
+        </Link>
         <nav>
           <NavLink 
             className='nav-button' 
