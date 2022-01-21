@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Routes, Route } from 'react-router-dom'
 import ChatroomHeader from './ChatroomHeader'
 import Messages from './Messages'
 import Members from './Members'
@@ -53,7 +53,10 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         <Messages messages={chatroom.messages} currentMember={currentMember}/>
         <Members members={chatroom.members}/>
         <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
-        <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />
+        <Routes>
+          <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />}/>
+          <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />}/>
+        </Routes>
       </div>
     ) : (
       handleErrors()
