@@ -9,11 +9,11 @@ import ChatroomWithdrawal from './ChatroomWithdrawal'
 function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   const [chatroom, setChatroom] = useState({})
   const [errors, setErrors] = useState([])
-  const {id} = useParams()
+  const {chatroomId} = useParams()
 
 
   useEffect(() => {
-    fetch(`/api/chatrooms/${id}`)
+    fetch(`/api/chatrooms/${chatroomId}`)
     .then(r => {
       if (r.ok) {
         r.json().then(data => {
@@ -26,7 +26,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         })
       }
     })
-  }, [id])
+  }, [chatroomId])
 
   function handleChatroomMessage(message) {
     setChatroom(chatroom => {
