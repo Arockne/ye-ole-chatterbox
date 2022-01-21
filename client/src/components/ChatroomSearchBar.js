@@ -11,27 +11,23 @@ function ChatroomSearchBar({ search, setSearch, searchBy, setSearchBy }) {
 
   return (
     <div className='chatroom-search-bar'>
-      <div>
-        <input 
-          type='text'
-          value={search}
-          onChange={handleSearchChange}
-        />
-      </div>
-      <div>
-        <fieldset>
-          <label>
-            <input 
-              type='radio' 
-              name='search' 
-              value='name'
-              checked={searchBy === 'name'} 
-              onChange={handleRadioChange}
-            />
-            By Name
-          </label>
-        </fieldset>
-      </div>
+      <input 
+        type='text'
+        value={search}
+        onChange={handleSearchChange}
+      />
+      <fieldset>
+        <label>
+          <input 
+            type='radio' 
+            name='search' 
+            value='name'
+            checked={searchBy === 'name'} 
+            onChange={handleRadioChange}
+          />
+          By Name
+        </label>
+      </fieldset>
     </div>
   )
 }
