@@ -30,13 +30,13 @@ function SignUpForm({ handleUser }) {
     .then(r => {
       if (r.ok) {
         r.json().then(user => {
-          setFormData(data => signUpFormDefaultValues)
+          setFormData(signUpFormDefaultValues)
           navigate('/')
           handleUser(user)
         })
       } else {
         r.json().then(e => {
-          setErrors(errors => e.errors)
+          setErrors(e.errors)
         })
       }
     })

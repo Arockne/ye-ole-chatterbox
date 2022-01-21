@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   function handleUser(userUpdate) {
-    setUser(user => userUpdate)
+    setUser(userUpdate)
   }
 
   function handleChatroomMembership(chatroom) {
