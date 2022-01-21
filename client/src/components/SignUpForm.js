@@ -7,7 +7,7 @@ const signUpFormDefaultValues = {
   password_confirmation: ''
 }
 
-function SignUpForm({ handleLogin }) {
+function SignUpForm({ handleUser }) {
   const [formData, setFormData] = useState(signUpFormDefaultValues)
   const [errors, setErrors] = useState([])
 
@@ -32,7 +32,7 @@ function SignUpForm({ handleLogin }) {
         r.json().then(user => {
           setFormData(signUpFormDefaultValues)
           navigate('/')
-          handleLogin(user)
+          handleUser(user)
         })
       } else {
         r.json().then(e => {

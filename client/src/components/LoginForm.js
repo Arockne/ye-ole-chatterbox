@@ -6,7 +6,7 @@ const defaultLoginFormData = {
   password: ''
 }
 
-function LoginForm({ handleLogin }) {
+function LoginForm({ handleUser }) {
   const [formData, setFormData] = useState(defaultLoginFormData)
   const [errors, setErrors] = useState([])
 
@@ -28,7 +28,7 @@ function LoginForm({ handleLogin }) {
       if (r.ok) {
         r.json().then(user => {
           setFormData(data => defaultLoginFormData)
-          handleLogin(user)
+          handleUser(user)
         })
       } else {
         r.json().then(({errors}) => {

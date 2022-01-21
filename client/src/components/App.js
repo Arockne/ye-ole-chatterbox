@@ -26,7 +26,7 @@ function App() {
       })
   }, []);
 
-  function handleLogin(user) {
+  function handleUser(user) {
     setUser(() => user)
   }
 
@@ -50,14 +50,14 @@ function App() {
     if (!authenticated) {
       return <div></div>
     } else {
-      return <Login handleLogin={handleLogin}/>
+      return <Login handleUser={handleUser}/>
     }
   }
 
   function authorizedUser() {
     return (
       <Routes>
-        <Route path="/" element={<Header setUser={setUser}/>}>
+        <Route path="/" element={<Header handleUser={handleUser}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
             <Route path=":id" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>

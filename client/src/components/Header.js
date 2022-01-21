@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import logo from '../images/moustache-man.jpg'
 
-function Header({ setUser }) {
+function Header({ handleUser }) {
   const navigate = useNavigate()
 
   function handleLogout() {
@@ -11,7 +11,7 @@ function Header({ setUser }) {
     })
     .then(r => {
       if (r.ok) {
-        setUser(null)
+        handleUser(null)
         navigate('/')
       }
     })
