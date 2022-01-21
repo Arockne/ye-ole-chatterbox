@@ -10,7 +10,7 @@ import MembershipNav from "./MembershipNav";
 
 function App() {
   const [user, setUser] = useState(null)
-  const [loaded, setLoaded] = useState(false)
+  const [authenticated, setauthenticated] = useState(false)
 
   useEffect(() => {
     fetch("/api/me")
@@ -18,16 +18,16 @@ function App() {
         if (r.ok) {
           r.json().then((userData) => { 
             setUser(() => userData)
-            setLoaded(loaded => !loaded) 
+            setauthenticated(authenticated => !authenticated) 
           })
         } else {
-          setLoaded(loaded => !loaded)
+          setauthenticated(authenticated => !authenticated)
         }
       })
   }, []);
 
   function handleUser(userUpdate) {
-    setUser(userUpdate)
+    setUser(user => userUpdate)
   }
 
   function handleChatroomMembership(chatroom) {
@@ -46,7 +46,7 @@ function App() {
     })
   }
 
-  if (!loaded) {
+  if (!authenticated) {
     return <div></div>
   }
 
