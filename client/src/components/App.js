@@ -59,7 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Header handleUser={handleUser}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
-            <Route path=":id" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
+            <Route path=":chatroomId/*" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
           <Route index element={<MembershipNav memberships={user.memberships}/>}/>
