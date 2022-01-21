@@ -50,7 +50,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     chatroom.name ? (
       <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
-        <Messages messages={chatroom.messages}/>
+        <Messages messages={chatroom.messages} currentMember={currentMember}/>
         <Members members={chatroom.members}/>
         <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
         <Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import Message from './Message'
 
-function Messages({ messages }) {
+function Messages({ messages, currentMember }) {
   const messageEndRef = useRef(null)
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function Messages({ messages }) {
   return (
     <div className='messages'>
       {
-        messages.map(message => <Message key={message.id} message={message}/>)
+        messages.map(message => <Message key={message.id} message={message} currentMember={currentMember}/>)
       }
       <div ref={messageEndRef}/>
     </div>
