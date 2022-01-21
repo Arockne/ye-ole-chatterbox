@@ -2,11 +2,7 @@ import React from 'react'
 
 function Member({ member }) {
   const {username} = member
-  return (
-    <div>
-      <p>{username}</p>
-    </div>
-  )
+  return <p>{username}</p>
 }
 
 export default Member
