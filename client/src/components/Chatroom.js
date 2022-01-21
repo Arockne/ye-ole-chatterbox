@@ -45,7 +45,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         }
         return message;
       })
-      return chatroom;
+      return updatedChatroom;
     })
   }
 
