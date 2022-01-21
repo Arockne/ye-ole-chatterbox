@@ -38,7 +38,7 @@ function App() {
     })
   }
 
-  function handleUserChatroomMembershipWithdrawal(chatroom) {
+  function handleChatroomMembershipWithdrawal(chatroom) {
     setUser(user => {
       const updatedUser = { ...user };
       updatedUser.memberships = user.memberships.filter(membership => membership.id !== chatroom.id)
@@ -59,7 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Header setUser={setUser}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
-            <Route path=":id" element={<Chatroom user={user} handleUserChatroomMembershipWithdrawal={handleUserChatroomMembershipWithdrawal}/>}/>
+            <Route path=":id" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
           <Route index element={<MembershipNav memberships={user.memberships}/>}/>

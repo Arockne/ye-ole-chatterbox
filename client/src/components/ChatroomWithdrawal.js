@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function ChatroomWithdrawal({ currentMember, handleUserChatroomMembershipWithdrawal }) {
+function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal }) {
   const navigate = useNavigate()
 
   function handleChatroomWithdrawal() {
@@ -11,7 +11,7 @@ function ChatroomWithdrawal({ currentMember, handleUserChatroomMembershipWithdra
     .then(r => {
       if (r.ok) {
         r.json().then(chatroom => {
-          handleUserChatroomMembershipWithdrawal(chatroom)
+          handleChatroomMembershipWithdrawal(chatroom)
           navigate('/')
         })
       }
