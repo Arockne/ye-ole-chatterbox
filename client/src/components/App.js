@@ -26,8 +26,8 @@ function App() {
       })
   }, []);
 
-  function handleUser(userUpdate) {
-    setUser(user => userUpdate)
+  function handleLogin(user) {
+    setUser(() => user)
   }
 
   function handleChatroomMembership(chatroom) {
@@ -50,7 +50,7 @@ function App() {
     if (!authenticated) {
       return <div></div>
     } else {
-      return <Login handleUser={handleUser}/>
+      return <Login handleLogin={handleLogin}/>
     }
   }
 
