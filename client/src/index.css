@@ -277,6 +277,8 @@ input[type=radio]:checked {
   overflow: auto;
 }
 
+/********** Message *************/
+
 .message {
   display: grid;
   grid-template-columns: 1fr 20fr;
@@ -299,6 +301,7 @@ input[type=radio]:checked {
 .content h5 {
   margin: 0;
   color: gainsboro;
+  padding-bottom: .5rem;
 }
 
 .content p {
@@ -308,6 +311,30 @@ input[type=radio]:checked {
 .message img {
   width: 3rem;
 }
+
+.message-heading {
+  display: flex;
+}
+
+.message-buttons {
+  display: flex;
+  flex-grow: 1;
+}
+
+.icon {
+  padding: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 .3rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+}
+
+/****** Messenger **********/
 
 .messenger {
   display: grid;
@@ -337,28 +364,6 @@ input[type=radio]:checked {
   background-color: black;
   color: red;
   font-weight: bold;
-}
-
-.message-heading {
-  display: flex;
-}
-
-.message-buttons {
-  display: flex;
-  flex-grow: 1;
-}
-
-.icon {
-  padding: 0;
-  font-size: 1.5rem;
-  height: 2rem;
-  width: 2rem;
-  margin: 0 .3rem;
-  text-align: center;
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border-radius: 1rem;
 }
 
 @media (height < 800px) {
