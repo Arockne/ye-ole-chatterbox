@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/moustache-man.jpg'
 
 function Header({ handleUser }) {
   const navigate = useNavigate()
+  const {pathname} = useLocation()
+  const activeStyle = { backgroundColor: 'black', color: 'white' }
 
   function handleLogout() {
     fetch('/api/logout', {
@@ -17,8 +19,6 @@ function Header({ handleUser }) {
     })
   }
 
-  const activeStyle = { backgroundColor: 'black', color: 'white' }
-
   return (
     <div>
       <header className='main-header'>
@@ -29,12 +29,22 @@ function Header({ handleUser }) {
         <nav>
           <NavLink 
             className='nav-button' 
+            to='/chatrooms'
+            style={({ isActive }) =>
+              isActive ? activeStyle : undefined
+            }
+            end={pathname === '/chatrooms/search'}
+          >
+            Memberships
+          </NavLink>
+          <NavLink 
+            className='nav-button' 
             to='/chatrooms/search'
             style={({ isActive }) =>
               isActive ? activeStyle : undefined
             }
           >
-            Parlor Rooms
+            Parlor Room Exploration
           </NavLink>
           <button className='nav-button' onClick={handleLogout}>Logout</button>
         </nav>
