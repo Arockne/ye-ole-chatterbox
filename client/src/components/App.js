@@ -68,9 +68,7 @@ function App() {
   }
 
   return (
-    <div>
-      {!user ? ( unauthorizedUser() ) : ( authorizedUser() )}
-    </div>
+    <div>{ !user ? unauthorizedUser() : authorizedUser() }</div>
   );
 }
 
