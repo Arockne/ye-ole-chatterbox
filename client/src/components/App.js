@@ -62,7 +62,6 @@ function App() {
             <Route path=":chatroomId/*" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
-          <Route index element={<MembershipNav memberships={user.memberships}/>}/>
         </Route>
       </Routes>
     )
