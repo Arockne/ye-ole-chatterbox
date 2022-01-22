@@ -17,6 +17,12 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     render json: message, status: :ok
   end
 
+  def destroy
+    message = current_user.messages.find(params[:id])
+    message.destroy
+    render json: message, status: :ok
+  end
+
   private
 
   def render_not_found
