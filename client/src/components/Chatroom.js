@@ -49,6 +49,14 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     })
   }
 
+  function handleMessageDelete(deletedMessage) {
+    setChatroom(chatroom => {
+      const updatedChatroom = { ...chatroom }
+      updatedChatroom.messages = updatedChatroom.messages.filter(message => message.id !== deletedMessage.id)
+      return updatedChatroom;
+    })
+  }
+
   function handleErrors() {
     if (errors.length === 0) {
       return <div></div>
@@ -63,7 +71,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     chatroom.name ? (
       <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
-        <Messages messages={chatroom.messages} currentMember={currentMember}/>
+        <Messages messages={chatroom.messages} currentMember={currentMember} handleMessageDelete={handleMessageDelete}/>
         <Members members={chatroom.members}/>
         <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
         <Routes>
