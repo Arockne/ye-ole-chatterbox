@@ -7,6 +7,7 @@ import Header from './Header'
 import Chatroom from "./Chatroom";
 import ChatroomSearch from "./ChatroomSearch";
 import MembershipNav from "./MembershipNav";
+import Welcome from './Welcome'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -62,6 +63,7 @@ function App() {
             <Route path=":chatroomId/*" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
+          <Route index element={<Welcome username={user.username}/>} />
         </Route>
         <Route path="*" element={<Navigate to="/"/> }/>
       </Routes>
