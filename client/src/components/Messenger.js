@@ -26,41 +26,49 @@ function Messenger({ chatroom, handleChatroomMessage }) {
     setMessage(() => e.target.value)
   }
 
+  function handleEdit() {
+    fetch(`/api/chatrooms/${chatroom}/messages/${messageId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ content: message })
+    })
+    .then(r => {
+      if (r.ok) {
+        r.json().then(message => {
+          handleChatroomMessage(message)
+          setMessage(() => '')
+          navigate(`/chatrooms/${chatroom}`)
+        })
+      }
+    })
+  }
+
+  function handleNew() {
+    fetch(`/api/chatrooms/${chatroom}/messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ content: message })
+    })
+    .then(r => {
+      if (r.ok) {
+        r.json().then(message => {
+          handleChatroomMessage(message)
+          setMessage(() => '')
+        })
+      }
+    })
+  }
+
   function handleMessageSubmit(e) {
     e.preventDefault()
     if (messageId) {
-      fetch(`/api/chatrooms/${chatroom}/messages/${messageId}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ content: message })
-      })
-      .then(r => {
-        if (r.ok) {
-          r.json().then(message => {
-            handleChatroomMessage(message)
-            setMessage(() => '')
-            navigate(`/chatrooms/${chatroom}`)
-          })
-        }
-      })
+      handleEdit();
     } else {
-      fetch(`/api/chatrooms/${chatroom}/messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ content: message })
-      })
-      .then(r => {
-        if (r.ok) {
-          r.json().then(message => {
-            handleChatroomMessage(message)
-            setMessage(() => '')
-          })
-        }
-      })
+      handleNew();
     }
   }
 
