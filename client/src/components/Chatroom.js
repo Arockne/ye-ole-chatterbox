@@ -53,7 +53,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     if (errors.length === 0) {
       return <div></div>
     } else {
-      return <div>{errors.map(e => <p key={e}>{e}</p>)}</div>
+      return <div className='errors'>{errors.map(e => <p key={e}>{e}</p>)}</div>
     }
   }
 

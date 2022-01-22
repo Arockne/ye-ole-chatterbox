@@ -331,6 +331,14 @@ input[type=radio]:checked {
   margin: 1rem;
 }
 
+.errors {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: red;
+  font-weight: bold;
+}
+
 @media (height < 800px) {
   .membership-nav {
     grid-template-rows: 40rem;
