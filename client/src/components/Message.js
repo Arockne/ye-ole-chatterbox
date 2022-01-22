@@ -25,14 +25,16 @@ function Message({ message, currentMember, handleMessageDelete }) {
     <div className='message'>
       <img src={user.image_url || logo} alt={user.image_url === '' ? 'moustache man' : 'chatroom image'} />
       <div className='content'>
-        <h5><span className='creator'>{user.username}</span> {created_at}</h5>
-        <p>{content}</p>
+        <div className='message-heading'>
+          <h5><span className='creator'>{user.username}</span> {created_at}</h5>
         {creator ? 
-          <div>
-            <button onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}>🪶</button> 
-            <button onClick={handleDelete}>☢︎</button>
+          <div className='message-buttons'>
+            <button className='icon' onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}>🪶</button> 
+            <button className='icon' onClick={handleDelete}>☢︎</button>
           </div>
           : ''}
+        </div>
+        <p>{content}</p>
       </div>
     </div>
   )

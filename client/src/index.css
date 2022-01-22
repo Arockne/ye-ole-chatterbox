@@ -339,6 +339,28 @@ input[type=radio]:checked {
   font-weight: bold;
 }
 
+.message-heading {
+  display: flex;
+}
+
+.message-buttons {
+  display: flex;
+  flex-grow: 1;
+}
+
+.icon {
+  padding: 0;
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 .3rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+}
+
 @media (height < 800px) {
   .membership-nav {
     grid-template-rows: 40rem;
