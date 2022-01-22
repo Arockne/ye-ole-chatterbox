@@ -28,7 +28,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     })
   }, [chatroomId])
 
-  function handleChatroomMessage(message) {
+  function handleMessageNew(message) {
     setChatroom(chatroom => {
       const updatedChatroom = { ...chatroom }
       updatedChatroom.messages = [ ...chatroom.messages, message ]
@@ -75,7 +75,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         <Members members={chatroom.members}/>
         <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
         <Routes>
-          <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleChatroomMessage} />}/>
+          <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageNew} />}/>
           <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageEdit} />}/>
         </Routes>
       </div>
