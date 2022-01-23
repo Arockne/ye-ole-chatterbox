@@ -12,7 +12,7 @@ function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal 
       if (r.ok) {
         r.json().then(chatroom => {
           handleChatroomMembershipWithdrawal(chatroom)
-          navigate('/')
+          navigate('/chatrooms')
         })
       }
     })
