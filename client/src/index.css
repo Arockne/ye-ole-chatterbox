@@ -132,6 +132,7 @@
 .welcome .username {
   text-transform: capitalize;
   font-weight: bold;
+  font-size: 2rem;
 }
 
 /******* Chatroom Search *****/
