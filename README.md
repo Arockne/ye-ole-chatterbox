@@ -5,7 +5,6 @@ Ye Ole Chatterbox chatting application without real time chat **yet...**
 ## To get started:
 
 **This application assumes that bundler, npm, ruby, rails, and postgresql is installed**
-probably should add the steps to install these dependencies
 
 ```sh
 bundle install
