@@ -6,7 +6,7 @@ class ChatroomMembership < ApplicationRecord
   validates :user, uniqueness: { 
     scope: :chatroom, 
     message: -> (object, data) do
-      "is already a member of that chatroom"
+      "is already a member of #{object.chatroom.name}"
     end
     }
 end
