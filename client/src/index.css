@@ -1,3 +1,7 @@
+#root {
+  height: 58rem;
+}
+
 /**** LOGIN ****/
 
 .login {
@@ -55,9 +59,20 @@
   align-self: center;
 }
 
+/******** Authorized Site ********/
+
+.main-site-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
 /****** Header *******/
 
 .main-header {
+  grid-area: 1 / 1 / span 1 / span 8;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -102,6 +117,8 @@
 /******* Welcome *********/
 
 .welcome {
+  grid-column: 1 / span 8;
+  grid-row: 2 / span 7;
   display: grid;
   grid: repeat(6, 1fr) / repeat(16, 1fr);
   text-align: center;
@@ -138,9 +155,10 @@
 /******* Chatroom Search *****/
 
 .chatroom-search {
+  grid-column: 1 / span 8;
+  grid-row: 2 / span 7;
   display: grid;
   grid: repeat(8, 1fr) / repeat(4, 1fr) 1.5fr repeat(4, 1fr);
-  height: 50rem;
 }
 
 .chatroom-search-bar {
@@ -229,9 +247,11 @@ input[type=radio]:checked {
 /******* Membership Navigation *****/
 
 .membership-nav {
+  grid-column: 1 / span 8;
+  grid-row: 2 / span 7;
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-template-rows: 51rem;
+  grid-template-rows: 100%;
 }
 
 .membership-nav nav {
@@ -405,10 +425,7 @@ input[type=radio]:checked {
 }
 
 @media (height < 800px) {
-  .membership-nav {
-    grid-template-rows: 40rem;
-  }
-  .chatroom-search {
-    height: 40.68rem;
+  #root {
+    height: 46.7rem;
   }
 }

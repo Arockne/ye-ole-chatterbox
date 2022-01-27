@@ -71,7 +71,7 @@ function App() {
   }
 
   return (
-    <div className={!user ? 'login' : ''}>
+    <div className={!user ? 'login' : 'main-site-container'}>
       { !user ? unauthorizedUser() : authorizedUser() }
     </div>
   );
