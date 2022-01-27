@@ -6,7 +6,7 @@ import SignUpForm from './SignUpForm'
 
 function Login({ handleUser }) {
   return (
-    <div className='login'>
+    <>
       <img src={logo} alt='moustache man'/>
       <h2>Welcome to the chatter!</h2>
       <Routes>
@@ -14,7 +14,7 @@ function Login({ handleUser }) {
         <Route path='/signup' element={<SignUpForm handleUser={handleUser} />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
-    </div>
+    </>
   )
 }
 
