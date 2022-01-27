@@ -382,18 +382,17 @@ input[type=radio]:checked {
 /****** Messenger **********/
 
 .messenger {
+  grid-area: 9 / 1 / 9 / span 8;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
   justify-content: center;
-  grid-column: 1 / span 8;
-  grid-row: 9 / 9;
   border-top: 2px solid black;
   text-align: center;
 }
 .messenger form {
   grid-column: 1 / span 5;
-  width: 100%;
 }
 
 .messenger form [type=text] {
