@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../images/moustache-man.jpg'
+import logo from '../images/moustache-man-transparent-background.png'
 
 
 function ChatroomSearchListItem({ chatroom, selectedChatroom, setSelectedChatroom }) {

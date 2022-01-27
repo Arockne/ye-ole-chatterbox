@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
-import logo from '../images/moustache-man.jpg'
+import logo from '../images/moustache-man-transparent-background.png'
 
 function Header({ handleUser }) {
   const navigate = useNavigate()
