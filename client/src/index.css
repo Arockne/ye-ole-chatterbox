@@ -153,7 +153,7 @@
 .chatroom-search {
   grid-area: 2 / 1 / span 7 / span 8;
   display: grid;
-  grid: repeat(8, 1fr) / repeat(4, 1fr) 1.5fr repeat(4, 1fr);
+  grid: repeat(8, 1fr) / repeat(9, 1fr);
 }
 
 .chatroom-search-bar {
