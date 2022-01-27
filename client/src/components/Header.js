@@ -20,7 +20,7 @@ function Header({ handleUser }) {
   }
 
   return (
-    <div>
+    <>
       <header className='main-header'>
         <Link className='heading' to='/'>
           <h1>Ye Ole ChatterBox</h1>
@@ -50,7 +50,7 @@ function Header({ handleUser }) {
         </nav>
       </header>
       <Outlet />
-    </div>
+    </>
   ) 
 }
 
