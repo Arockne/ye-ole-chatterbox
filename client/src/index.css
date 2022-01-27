@@ -179,6 +179,7 @@
 .search-item {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -189,11 +190,6 @@
   cursor: pointer;
 }
 
-.selected {
-  border: 2px solid black;
-  box-shadow: 1px 2px 5px black;
-}
-
 .search-item img {
   margin: 1rem 1rem;
   width: 5.625rem;
@@ -201,6 +197,11 @@
 
 .search-item p {
   margin: 1rem;
+}
+
+.selected {
+  border: 2px solid black;
+  box-shadow: 1px 2px 5px black;
 }
 
 .chatroom-search-error {
@@ -271,8 +272,6 @@ input[type=radio]:checked {
 }
 
 .membership-nav-button h4 {
-  display: block;
-  margin: 0 .5rem 0;
   font-weight: normal;
 }
 
