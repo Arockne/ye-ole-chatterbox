@@ -30,9 +30,6 @@ npm install --prefix client
 - User images
   - default avatar images to choose from
 
-### Top Hat, Monocle, Moustache Image by:
-- [Oldskool0482](https://www.redbubble.com/people/Oldskool0482/shop#profile)
-
 ## Deployment Instructions
 
 ## System Dependencies:
