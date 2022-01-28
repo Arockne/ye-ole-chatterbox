@@ -36,8 +36,9 @@ Chatroom.create ([
   }
 ])
 
-first_user = User.create(username: 'pippin', password: 'notsafe', password_confirmation: 'notsafe')
-second_user = User.create(username: 'billy', password: 'notsafe', password_confirmation: 'notsafe')
+first_user = User.create(username: 'peter', password: 'notsafe', password_confirmation: 'notsafe', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sir_Peter_Paul_Rubens_-_Portrait_of_the_Artist_-_Google_Art_Project.jpg/800px-Sir_Peter_Paul_Rubens_-_Portrait_of_the_Artist_-_Google_Art_Project.jpg')
+second_user = User.create(username: 'elizabeth', password: 'notsafe', password_confirmation: 'notsafe', image_url: 'https://www.toperfect.com/pic/Oil%20Painting%20Masterpieces%20on%20Canvas/Winterhalter%20Franz%20Xavier_Germany_1805-1873/5-Princess-Elizabeth-Esperovna-Belosselsky-Belosenky-Princess-Troubetskoi-royalty-portrait-Franz-Xaver-Winterhalter.jpg')
+third_user = User.create(username: 'james', password: 'notsafe', password_confirmation: 'notsafe')
 
 first_chatroom = Chatroom.first
 first_chatroom.chatroom_memberships.create(user: first_user)
