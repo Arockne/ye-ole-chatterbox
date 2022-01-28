@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../images/moustache-man-transparent-background.png'
+import logo from '../images/tophatmonocle-hat-transparent.png'
 import { useNavigate } from 'react-router-dom'
 
 function Message({ message, currentMember, handleMessageDelete }) {

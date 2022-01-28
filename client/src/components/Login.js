@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from './LoginForm'
-import logo from '../images/moustache-man-transparent-background.png'
+import logo from '../images/tophatmonocle-hat-transparent.png'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import SignUpForm from './SignUpForm'
 

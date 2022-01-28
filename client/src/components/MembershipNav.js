@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import logo from '../images/moustache-man-transparent-background.png'
+import logo from '../images/tophatmonocle-hat-transparent.png'
 
 function MembershipNav({ memberships }) {
   const activeStyle = { backgroundColor: 'whitesmoke' }
