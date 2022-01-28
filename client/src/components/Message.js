@@ -29,8 +29,16 @@ function Message({ message, currentMember, handleMessageDelete }) {
           <h5><span className='creator'>{user.username}</span> {created_at}</h5>
           {creator ? 
             <div className='message-buttons'>
-              <button className='icon' onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}>🪶</button> 
-              <button className='icon' onClick={handleDelete}>☢︎</button>
+              <button 
+                className='icon' 
+                onClick={() => navigate(`/chatrooms/${currentMember.chatroom_id}/messages/${id}/edit`)}
+                title='edit'
+              >🪶</button> 
+              <button 
+                className='icon' 
+                onClick={handleDelete}
+                title='delete'
+              >☢︎</button>
             </div>
             : ''}
         </div>
