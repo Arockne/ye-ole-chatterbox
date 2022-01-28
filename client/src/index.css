@@ -364,12 +364,6 @@ input[type=password]:focus {
   display: grid;
   grid-template-columns: 1fr 20fr;
   align-items: start;
-}
-
-.message .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   line-height: 1.2rem;
 }
 
