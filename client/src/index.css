@@ -1,3 +1,8 @@
+body {
+  background-color: #fff0d0;
+  color: #604030
+}
+
 #root {
   height: 58rem;
 }
@@ -123,23 +128,21 @@
 }
 
 .welcome img {
-  width: 12rem;
-  border-radius: 3rem;
-}
-
-.welcome .img-container {
   grid-area: 2 / 8 / span 3 / span 2;
   align-self: center;
   justify-self: center;
-  padding: 2.5rem;
-  border: 2px solid black;
-  box-shadow: 1px 2px 5px black;
+  width: 18em;
+  border: 1px solid black;
   border-radius: 50%;
+  border: .5rem solid #c0a080;
+  background-color: #ffd0a0;
+  box-shadow: 1px 2px 10px black;
 }
 
 .welcome p {
   grid-area: 5 / 7 / span 1 / span 4;
   font-size: 1.5rem;
+  align-self: end;
 }
 
 .welcome .username {
