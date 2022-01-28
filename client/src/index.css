@@ -8,6 +8,7 @@ body {
 }
 
 /***** Custom Scroll ******/
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -27,7 +28,7 @@ body {
   background: #604030; 
 }
 
-/***** Radio Button ******/
+/***** Form Inputs ******/
 
 input[type=radio] {
   -webkit-appearance: none;
@@ -339,6 +340,7 @@ input[type=password] {
 .chatroom-withdrawal button {
   font-size: .75rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .messages {
