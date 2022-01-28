@@ -348,6 +348,7 @@ input[type=password] {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-left: .5rem;
   overflow: auto;
 }
 
@@ -385,6 +386,9 @@ input[type=password] {
 
 .message img {
   width: 3rem;
+  border-radius: 50%;
+  border: 2px solid #c0a080;
+  background-color: #FFFAFA;
 }
 
 .message-heading {
