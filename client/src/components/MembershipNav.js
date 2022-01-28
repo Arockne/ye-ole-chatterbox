@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
 function MembershipNav({ memberships }) {
-  const activeStyle = { backgroundColor: 'whitesmoke' }
+  const activeStyle = { backgroundColor: '#f0e0c0' }
   return (
     <div className='membership-nav'>
       <nav>

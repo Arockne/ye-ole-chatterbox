@@ -135,7 +135,7 @@ input[type=password] {
 }
 
 .heading h1 {
-  color: black;
+  color: #604030;
   margin-left: 1rem;
   margin-bottom: .5rem;
 }
@@ -290,7 +290,7 @@ input[type=password] {
   justify-items: left;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: #604030;
 }
 
 .membership-nav-button img {
