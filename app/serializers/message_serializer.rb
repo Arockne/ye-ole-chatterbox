@@ -5,5 +5,6 @@ class MessageSerializer < ActiveModel::Serializer
     time = object.created_at
     time.to_formatted_s(:long_ordinal)
   end
+  
   belongs_to :user, serializer: UserSerializer
 end
