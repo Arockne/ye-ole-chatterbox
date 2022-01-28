@@ -187,9 +187,10 @@ body {
   justify-content: center;
   text-align: center;
   margin: 1rem;
-  border: 2px solid gray;
+  border: 2px solid #c0a080  ;
   border-radius: 10px;
-  box-shadow: 1px 2px 5px gray;
+  box-shadow: 1px 2px 5px #a09080;
+  background-color: #ffe0b0;
   cursor: pointer;
 }
 
@@ -203,7 +204,7 @@ body {
 }
 
 .selected {
-  border: 2px solid black;
+  border: 2px solid #604030;
   box-shadow: 1px 2px 5px black;
 }
 
