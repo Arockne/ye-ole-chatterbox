@@ -152,8 +152,8 @@ input[type=password] {
 
 .nav-button {
   border: 1px solid black;
-  background-color: white;
-  color: black;
+  background-color: #ffe0b0;
+  color: #604030;
   text-decoration: none;
   font-size: 1.5rem;
   padding: .2rem 1rem;

@@ -5,7 +5,7 @@ import logo from '../images/tophatmonocle-hat-transparent.png'
 function Header({ handleUser }) {
   const navigate = useNavigate()
   const {pathname} = useLocation()
-  const activeStyle = { backgroundColor: 'black', color: 'white' }
+  const activeStyle = { backgroundColor: '#ffd0a0', color: '#604030' }
 
   function handleLogout() {
     fetch('/api/logout', {
