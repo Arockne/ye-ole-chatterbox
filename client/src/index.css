@@ -426,11 +426,9 @@ input[type=password]:focus {
 
 .icon {
   padding: 0;
-  font-size: 1.5rem;
-  height: 2rem;
+  font-size: 1.3rem;  
   width: 2rem;
   margin: 0 .3rem;
-  text-align: center;
   cursor: pointer;
   background-color: #ffffe0;
   color: #604030;
