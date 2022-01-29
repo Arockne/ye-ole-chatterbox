@@ -115,8 +115,7 @@ input[type=password]:focus {
   text-align: center;
 }
 
-.submit-button, 
-.search-submit-button {
+.submit-button {
   background-color: #ffd0a0;
   border-radius: 5px;
   padding: .2rem 2rem;
@@ -286,6 +285,11 @@ input[type=password]:focus {
 
 .search-submit-button {
   grid-area: 8 / 4 / span 1 / span 3;
+  background-color: #ffd0a0;
+  border-radius: 5px;
+  padding: .2rem 2rem;
+  margin: 2rem 0 1rem;
+  font-size: 1.1rem;
   align-self: start;
   justify-self: center;
   cursor: pointer;
