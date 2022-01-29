@@ -303,11 +303,12 @@ input[type=password]:focus {
 
 .membership-nav-button img {
   margin: 0;
-  width: 1.5rem;
-  padding: .5rem;
-  border: 1px solid black;
-  border-radius: 10px;
-  background: white;
+  width: 2rem;
+  padding: .2rem;
+  border: 2px solid #604030;
+  border-radius: 8px;
+  background-color: #FFFAFA;
+  justify-self: center;
 }
 
 .membership-nav-button h4 {
