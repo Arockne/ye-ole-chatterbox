@@ -50,6 +50,7 @@ input[type=password] {
   outline: none;
   border: 2px solid #c0a080;
   background-color: #ffffe0;
+  color: #604030;
 }
 
 input[type=text]:focus,
