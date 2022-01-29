@@ -117,6 +117,12 @@ input[type=password]:focus {
   align-self: center;
 }
 
+.user-form a {
+  color: #604030;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /******** Authorized Site ********/
 
 .main-site-container {
