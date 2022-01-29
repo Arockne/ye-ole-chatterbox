@@ -38,7 +38,7 @@ function Message({ message, currentMember, handleMessageDelete }) {
                 className='icon' 
                 onClick={handleDelete}
                 title='delete'
-              >☢︎</button>
+              >X</button>
             </div>
             : ''}
         </div>
