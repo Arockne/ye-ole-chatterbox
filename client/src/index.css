@@ -54,6 +54,10 @@ input[type=radio]:checked {
   background-color: black;
 }
 
+input:enabled {
+  color: #604030;
+}
+
 input[type=text],
 input[type=password] {
   outline: none;
