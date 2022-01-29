@@ -397,7 +397,6 @@ input[type=password]:focus {
 
 .message-buttons {
   display: flex;
-  flex-grow: 1;
 }
 
 .icon {
@@ -408,8 +407,8 @@ input[type=password]:focus {
   margin: 0 .3rem;
   text-align: center;
   cursor: pointer;
-  background-color: #FFFAFA;
-  color: black;
+  background-color: #ffffe0;
+  color: #604030;
   border-radius: 1rem;
 }
 
