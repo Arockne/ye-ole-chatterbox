@@ -81,7 +81,7 @@ function SignUpForm({ handleUser }) {
       {
         errors.map(error => <p key={error}>{error}</p>)
       }
-      <p><Link to='/'>Sign in</Link> if account<br/>does exit</p>
+      <p><Link to='/'>Sign in</Link> if account<br/>does exist</p>
     </div>
   )
 }
