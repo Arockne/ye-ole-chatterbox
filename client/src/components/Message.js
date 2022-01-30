@@ -3,7 +3,7 @@ import logo from '../images/tophatmonocle-hat-transparent.png'
 import { useNavigate } from 'react-router-dom'
 
 function Message({ message, currentMember, handleMessageDelete }) {
-  const { id, created_at, content, user} = message
+  const { id, date_created, content, user} = message
   const creator = currentMember.user_id === user.id
   const navigate = useNavigate()
 
@@ -26,7 +26,7 @@ function Message({ message, currentMember, handleMessageDelete }) {
       <img src={user.image_url || logo} alt={user.image_url === '' ? 'moustache man' : 'chatroom image'} />
       <div className='content'>
         <div className='message-heading'>
-          <h5><span className='creator'>{user.username}</span> {created_at}</h5>
+          <h5><span className='creator'>{user.username}</span> {date_created}</h5>
           {creator ? 
             <div className='message-buttons'>
               <button 
