@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import logo from '../images/tophatmonocle-hat-transparent.png'
 
 const signUpFormDefaultValues = {
   username: '',
   password: '',
-  password_confirmation: ''
+  password_confirmation: '',
+  image_url: ''
 }
 
 function SignUpForm({ handleUser }) {
@@ -75,6 +77,15 @@ function SignUpForm({ handleUser }) {
             value={formData.password_confirmation}
             onChange={handleFormChange}
           />
+        </label>
+        <br />
+        <label>Choose Profile Image:
+          <br />
+          <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
+            <option value=''>Default</option>
+          </select>
+          <br />
+          <img src={formData.image_url ||  logo} alt='default profile face'/>
         </label>
         <input className='submit-button' type='submit' value='Register'/>
       </form>
