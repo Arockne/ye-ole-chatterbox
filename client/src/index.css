@@ -127,6 +127,12 @@ input[type=password]:focus {
   text-align: center;
 }
 
+.error {
+  color: #831212;
+  margin: 0;
+  font-size: .8rem;
+}
+
 .sign-up-form {
   display: flex;
   flex-direction: column;

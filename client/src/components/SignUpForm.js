@@ -132,9 +132,8 @@ function SignUpForm({ handleUser }) {
               <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
                 <option value=''>Default</option>
                 {
-                  profileImages.map(({ name, image_url }) => (
-                      <option key={name} value={image_url}>{name}</option>
-                    )
+                  profileImages.map(({ name, image_url }) =>
+                    <option key={name} value={image_url}>{name}</option>
                   )
                 }
               </select>
@@ -146,7 +145,9 @@ function SignUpForm({ handleUser }) {
         <input className='submit-button' type='submit' value='Register'/>
       </form>
       {
-        errors.map(error => <p key={error}>{error}</p>)
+        errors.map(error => 
+          <p key={error} className='error'>{error}</p>
+        )
       }
       <p><Link to='/'>Sign in</Link> if account<br/>does exist</p>
     </div>
