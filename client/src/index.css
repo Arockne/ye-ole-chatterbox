@@ -59,7 +59,8 @@ input:enabled {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+select {
   outline: none;
   border: 2px solid #c0a080;
   background-color: #ffffe0;
