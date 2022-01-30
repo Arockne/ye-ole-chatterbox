@@ -103,21 +103,57 @@ input[type=password]:focus {
   box-shadow: 1px 2px 7px black;
 }
 
-.user-form form {
+.user-form form,
+.sign-up-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
+
+.user-form label,
+.sign-up-form label {
+  font-size: 1.2rem;
+}
+
+.user-form input,
+.sign-up-form input {
+  font-size: 1.1rem;
+}
+
+.user-form p,
+.sign-up-form p {
+  text-align: center;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  border-radius: 50px;
+  padding-top: .5rem;
+  background-color: #ffe0b0;
+  border: 2px solid #604030;
+  box-shadow: 1px 2px 7px black;
+}
+
+.sign-up-form-containers {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.sign-up-form-container-1 {
   display: flex;
   flex-direction: column;
 }
 
-.user-form label {
-  font-size: 1.2rem;
-}
-
-.user-form input {
-  font-size: 1.1rem;
-}
-
-.user-form p {
+.sign-up-form-container-2 {
   text-align: center;
+}
+
+.sign-up-form-container-2 img {
+  width: 8rem;
 }
 
 .submit-button {
@@ -129,7 +165,8 @@ input[type=password]:focus {
   align-self: center;
 }
 
-.user-form a {
+.user-form a,
+.sign-up-form a {
   color: #604030;
   text-decoration: none;
   font-weight: bold;

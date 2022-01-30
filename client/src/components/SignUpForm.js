@@ -88,54 +88,61 @@ function SignUpForm({ handleUser }) {
   }
 
   return (
-    <div className='user-form'>
+    <div className='sign-up-form'>
       <form onSubmit={handleFormSubmit}>
-        <label>Username:
-          <br/>
-          <input 
-            type='text'
-            name='username'
-            value={formData.username}
-            onChange={handleFormChange}
-          />
-        </label>
-        <br/>
-        <label>Password:
-          <br/>
-          <input 
-            type='password'
-            autoComplete='off'
-            name='password'
-            value={formData.password}
-            onChange={handleFormChange}
-          />
-        </label>
-        <br/>
-        <label>Password Confirmation:
-          <br/>
-          <input 
-            type='password'
-            autoComplete='off'
-            name='password_confirmation'
-            value={formData.password_confirmation}
-            onChange={handleFormChange}
-          />
-        </label>
-        <br />
-        <label>Choose Profile Image:
-          <br />
-          <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
-            <option value=''>Default</option>
-            {
-              profileImages.map(({ name, image_url }) => (
-                  <option key={name} value={image_url}>{name}</option>
-                )
-              )
-            }
-          </select>
-          <br />
-          <img src={formData.image_url ||  logo} alt='default profile face'/>
-        </label>
+        <div className='sign-up-form-containers'>
+          <div className='sign-up-form-container-1'>
+            <br />
+            <label>Username:
+              <br/>
+              <input 
+                type='text'
+                name='username'
+                value={formData.username}
+                onChange={handleFormChange}
+              />
+            </label>
+            <br/>
+            <label>Password:
+              <br/>
+              <input 
+                type='password'
+                autoComplete='off'
+                name='password'
+                value={formData.password}
+                onChange={handleFormChange}
+              />
+            </label>
+            <br/>
+            <label>Password Confirmation:
+              <br/>
+              <input 
+                type='password'
+                autoComplete='off'
+                name='password_confirmation'
+                value={formData.password_confirmation}
+                onChange={handleFormChange}
+              />
+            </label>
+          </div>
+          <div className='sign-up-form-container-2'>
+            <br />
+            <label>Choose Profile Image:
+              <br />
+              <select name='image_url' value={formData.image_url} onChange={handleFormChange}>
+                <option value=''>Default</option>
+                {
+                  profileImages.map(({ name, image_url }) => (
+                      <option key={name} value={image_url}>{name}</option>
+                    )
+                  )
+                }
+              </select>
+              <br />
+              <img src={formData.image_url ||  logo} alt='default profile face'/>
+            </label>
+          </div>
+        </div>
         <input className='submit-button' type='submit' value='Register'/>
       </form>
       {
