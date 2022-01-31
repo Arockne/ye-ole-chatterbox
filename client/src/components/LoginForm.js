@@ -1,10 +1,6 @@
 import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
-
-const defaultLoginFormData = {
-  username: '',
-  password: ''
-}
+import { defaultLoginFormData } from './helpers/formhelpers.js'
 
 function LoginForm({ handleUser }) {
   const [formData, setFormData] = useState(defaultLoginFormData)
