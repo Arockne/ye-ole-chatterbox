@@ -49,9 +49,9 @@ first_user.messages.create(content: 'Ave, Caesar, morituri te salutant', chatroo
 
 second_chatroom = Chatroom.second
 second_chatroom.chatroom_memberships.create(user: first_user)
-first_user.messages.create(content: 'ALL BY MYSEEELLFFFFF', chatroom: second_chatroom)
-first_user.messages.create(content: 'Dont wanna be....', chatroom: second_chatroom)
-first_user.messages.create(content: 'ALL BY MYSEEELLFFFFF, anymore', chatroom: second_chatroom)
+first_user.messages.create(content: 'Mens sana in corpore sano ', chatroom: second_chatroom)
+first_user.messages.create(content: 'Dulce laudari a laudato viro', chatroom: second_chatroom)
+first_user.messages.create(content: 'Timet-non faciant. Facere-ne timeas', chatroom: second_chatroom)
 
 
 third_chatroom = Chatroom.third
