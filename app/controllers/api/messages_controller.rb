@@ -7,8 +7,13 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   end
 
   def create
-    message = current_user.messages.create!(message_params)
-    render json: message, status: :created
+    membership = current_user.memberships.find_by(chatroom_id: params[:chatroom_id])
+    if membership
+      message = current_user.messages.create!(message_params)
+      render json: message, status: :created
+    else
+      render json: { errors: ["Not authorized"]}, status: :unauthorized
+    end
   end
 
   def update
