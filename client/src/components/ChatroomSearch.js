@@ -42,13 +42,17 @@ function ChatroomSearch({ handleChatroomMembership }) {
     setSearch(() => search)
   }
 
+  function handleSearchBy(searchBy) {
+    setSearchBy(() => searchBy)
+  }
+
   function chatroomSearchResults() {
     return chatrooms.filter(chatroom => chatroom[searchBy].toLowerCase().includes(search.toLowerCase()))
   }
 
   return (
     <div className='chatroom-search'>
-      <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} setSearchBy={setSearchBy}/>
+      <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy}/>
       <ChatroomSearchList 
         searchResults={chatroomSearchResults()}
         selectedChatroom={selectedChatroom}
