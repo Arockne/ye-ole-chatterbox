@@ -7,7 +7,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
   end
 
   def create
-    membership = current_user.memberships.find_by(chatroom_id: params[:chatroom_id])
+    membership = current_user.memberships.find_by(id: params[:chatroom_id])
     if membership
       message = current_user.messages.create!(message_params)
       render json: message, status: :created
