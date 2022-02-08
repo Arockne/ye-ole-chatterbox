@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ChatroomSearchBar({ search, setSearch, searchBy, setSearchBy }) { 
+function ChatroomSearchBar({ search, handleSearch, searchBy, setSearchBy }) { 
   function handleSearchChange(e) {
-    setSearch(() => e.target.value)
+    handleSearch(e.target.value)
   }
 
   function handleRadioChange(e) {
