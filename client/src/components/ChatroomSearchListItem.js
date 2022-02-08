@@ -2,11 +2,11 @@ import React from 'react'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
 
-function ChatroomSearchListItem({ chatroom, selectedChatroom, setSelectedChatroom }) {
+function ChatroomSearchListItem({ chatroom, selectedChatroom, handleSelectedChatroom }) {
   const { id, name, image_url, bio } = chatroom
 
   function handleChatroomClick() {
-    setSelectedChatroom(() => id)
+    handleSelectedChatroom(id)
   }
 
   return (

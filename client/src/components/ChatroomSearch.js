@@ -47,6 +47,10 @@ function ChatroomSearch({ handleChatroomMembership }) {
     setSearchBy(() => searchBy)
   }
 
+  function handleSelectedChatroom(selectedChatroom) {
+    setSelectedChatroom(() => selectedChatroom)
+  }
+
   function chatroomSearchResults() {
     return chatrooms.filter(chatroom => chatroom[searchBy].toLowerCase().includes(search.toLowerCase()))
   }
@@ -56,7 +60,7 @@ function ChatroomSearch({ handleChatroomMembership }) {
       <ChatroomSearchBar search={search} handleSearch={handleSearch} searchBy={searchBy} handleSearchBy={handleSearchBy}/>
       <ChatroomSearchList>
         {
-          chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} setSelectedChatroom={setSelectedChatroom}/>)
+          chatroomSearchResults().map(chatroom => <ChatroomSearchListItem key={chatroom.id} chatroom={chatroom} selectedChatroom={selectedChatroom} handleSelectedChatroom={handleSelectedChatroom}/>)
         }
       </ChatroomSearchList>
       <div className='chatroom-search-error'>
