@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import { useParams, Routes, Route } from 'react-router-dom'
 import ChatroomHeader from './ChatroomHeader'
 import Messages from './Messages'
@@ -6,9 +6,48 @@ import Members from './Members'
 import Messenger from './Messenger'
 import ChatroomWithdrawal from './ChatroomWithdrawal'
 
+function reducer(state, action) {
+  switch(action.type) {
+    case 'fetchSuccess': {
+      return { ...state, chatroom: action.payload, errors: []}
+    }
+    case 'fetchFailure': {
+      return { ...state, errors: action.payload }
+    }
+    case 'messageNew': {
+      const updatedChatroom = { ...state.chatroom }
+      updatedChatroom.messages = [ ...state.chatroom.messages, action.payload ]
+      return { ...state, chatroom: updatedChatroom }
+    }
+    case 'messageEdit': {
+      const updatedChatroom = { ...state.chatroom }
+      updatedChatroom.messages = updatedChatroom.messages.map(message => {
+        if (message.id === action.payload.id) {
+          return action.payload;
+        }
+        return message;
+      })
+      return { ...state, chatroom: updatedChatroom }
+    }
+    case 'messageDelete': {
+      const updatedChatroom = { ...state.chatroom }
+      updatedChatroom.messages = updatedChatroom.messages.filter(message => message.id !== action.payload.id)
+      return { ...state, chatroom: updatedChatroom }
+    }
+    default: {
+      return state
+    }
+  }
+}
+
 function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
-  const [chatroom, setChatroom] = useState({})
-  const [errors, setErrors] = useState([])
+  const [state, dispatch] = useReducer(reducer, {
+    chatroom: {},
+    errors: []
+  })
+
+  const { chatroom, errors } = state
+  
   const {chatroomId} = useParams()
 
 
@@ -17,44 +56,26 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     .then(r => {
       if (r.ok) {
         r.json().then(data => {
-          setErrors([])
-          setChatroom(() => data)
+          dispatch({ type: 'fetchSuccess', payload: data })
         })
       } else {
         r.json().then(e => {
-          setErrors(() => e.errors)
+          dispatch({ type: 'fetchFailure', payload: e.errors })
         })
       }
     })
   }, [chatroomId])
 
   function handleMessageNew(message) {
-    setChatroom(chatroom => {
-      const updatedChatroom = { ...chatroom }
-      updatedChatroom.messages = [ ...chatroom.messages, message ]
-      return updatedChatroom
-    })
+    dispatch({ type: 'messageNew', payload: message})
   }
 
   function handleMessageEdit(messageEdit) {
-    setChatroom(chatroom => {
-      const updatedChatroom = { ...chatroom }
-      updatedChatroom.messages = updatedChatroom.messages.map(message => {
-        if (message.id === messageEdit.id) {
-          return messageEdit;
-        }
-        return message;
-      })
-      return updatedChatroom;
-    })
+    dispatch({ type: 'messageEdit', payload: messageEdit })
   }
 
   function handleMessageDelete(deletedMessage) {
-    setChatroom(chatroom => {
-      const updatedChatroom = { ...chatroom }
-      updatedChatroom.messages = updatedChatroom.messages.filter(message => message.id !== deletedMessage.id)
-      return updatedChatroom;
-    })
+    dispatch({ type: 'messageDelete', payload: deletedMessage })
   }
 
   function handleErrors() {
