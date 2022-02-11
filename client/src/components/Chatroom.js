@@ -86,15 +86,13 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     }
   }
 
-  const currentMember = chatroom.id && chatroom.chatroom_memberships.find(({ user_id }) => user_id === user.id)
-
   return (
     chatroom.name ? (
       <div className='chatroom'>
         <ChatroomHeader name={chatroom.name}/>
-        <Messages messages={chatroom.messages} currentMember={currentMember} handleMessageDelete={handleMessageDelete}/>
+        <Messages messages={chatroom.messages} currentMember={chatroom.current_member} handleMessageDelete={handleMessageDelete}/>
         <Members members={chatroom.members}/>
-        <ChatroomWithdrawal currentMember={currentMember} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
+        <ChatroomWithdrawal currentMember={chatroom.current_member} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>
         <Routes>
           <Route index element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageNew} />}/>
           <Route path='messages/:messageId/edit' element={<Messenger chatroom={chatroom.id} handleChatroomMessage={handleMessageEdit} />}/>
