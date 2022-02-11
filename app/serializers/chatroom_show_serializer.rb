@@ -6,7 +6,7 @@ class ChatroomShowSerializer < ActiveModel::Serializer
   has_many :messages
 
   def current_member
-    object.chatroom_memberships.find(current_user.id)
+    object.chatroom_memberships.where(user: current_user).first
   end
 
 end
