@@ -60,7 +60,7 @@ function LoginForm({ handleUser }) {
         <input className='bttn-1 submit-button' type='submit' value='Join in!'/>
       </form>
       {
-        errors.map(error => <p key={error} className='error'>{error}</p>)
+        errors.map(error => <p key={error} className='form-error'>{error}</p>)
       }
       <p>Enlist in an <Link to='/signup'>account</Link>,<br/> if one does not exist</p>
     </div>

@@ -97,7 +97,7 @@ function SignUpForm({ handleUser }) {
       </form>
       {
         errors.map(error => 
-          <p key={error} className='error'>{error}</p>
+          <p key={error} className='form-error'>{error}</p>
         )
       }
       <p><Link to='/'>Sign in</Link> if account<br/>does exist</p>
