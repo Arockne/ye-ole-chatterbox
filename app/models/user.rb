@@ -7,7 +7,7 @@ class User < ApplicationRecord
     self.memberships.map do |membership|
       {
         chatroom: membership.name,
-        messages: membership.messages.where(user: self).order(created_at: :desc).limit(5)
+        messages: membership.messages.where(user: self).last(5)
       }
     end
   end
