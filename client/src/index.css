@@ -93,6 +93,17 @@ input[type=password]:focus {
   cursor: pointer;
 }
 
+.icon {
+  padding: 0;
+  font-size: 1.3rem;  
+  width: 2rem;
+  margin: 0 .3rem;
+  cursor: pointer;
+  background-color: #ffffe0;
+  color: #604030;
+  border-radius: 1rem;
+}
+
 /**** Images ******/
 .img-1 {
   width: 12rem;
@@ -489,17 +500,6 @@ input[type=password]:focus {
 
 .message-buttons {
   display: flex;
-}
-
-.icon {
-  padding: 0;
-  font-size: 1.3rem;  
-  width: 2rem;
-  margin: 0 .3rem;
-  cursor: pointer;
-  background-color: #ffffe0;
-  color: #604030;
-  border-radius: 1rem;
 }
 
 /****** Messenger **********/
