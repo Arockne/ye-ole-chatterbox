@@ -108,6 +108,15 @@ input[type=password]:focus {
   width: 5rem;
 }
 
+.img-4 {
+  width: 18rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  border: .5rem solid #c0a080;
+  background-color: #FFFAFA;
+  box-shadow: 1px 2px 10px black;
+}
+
 /**** LOGIN ****/
 
 .login {
@@ -262,12 +271,6 @@ input[type=password]:focus {
   grid-area: 2 / 8 / span 3 / span 2;
   align-self: center;
   justify-self: center;
-  width: 18em;
-  border: 1px solid black;
-  border-radius: 50%;
-  border: .5rem solid #c0a080;
-  background-color: #FFFAFA;
-  box-shadow: 1px 2px 10px black;
 }
 
 .welcome p {
