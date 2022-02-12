@@ -184,12 +184,6 @@ input[type=password]:focus {
   text-align: center;
 }
 
-.form-error {
-  color: #831212;
-  margin: 0;
-  font-size: .8rem;
-}
-
 .sign-up-form {
   display: flex;
   flex-direction: column;
@@ -524,12 +518,20 @@ input[type=password]:focus {
   margin: 1rem;
 }
 
+/**** Application Errors *******/
+
 .errors {
   display: flex;
   justify-content: center;
   background-color: black;
   color: red;
   font-weight: bold;
+}
+
+.form-error {
+  color: #831212;
+  margin: 0;
+  font-size: .8rem;
 }
 
 @media (height < 800px) {
