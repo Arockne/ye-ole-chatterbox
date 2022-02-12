@@ -86,6 +86,12 @@ input[type=password]:focus {
   width: 12rem;
 }
 
+.img-2 {
+  width: 8rem;
+  height: 10rem;
+  border-radius: 50%;
+}
+
 /**** LOGIN ****/
 
 .login {
@@ -171,9 +177,6 @@ input[type=password]:focus {
 
 .sign-up-form-container-2 img {
   margin-top: .5rem;
-  width: 8rem;
-  height: 10rem;
-  border-radius: 50%;
 }
 
 .submit-button {

@@ -89,7 +89,7 @@ function SignUpForm({ handleUser }) {
                 }
               </select>
               <br />
-              <img src={formData.image_url ||  logo} alt='default profile face'/>
+              <img className='img-2' src={formData.image_url ||  logo} alt='default profile face'/>
             </label>
           </div>
         </div>
