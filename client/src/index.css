@@ -92,6 +92,10 @@ input[type=password]:focus {
   border-radius: 50%;
 }
 
+.img-3 {
+  width: 5rem;
+}
+
 /**** LOGIN ****/
 
 .login {
@@ -225,7 +229,6 @@ input[type=password]:focus {
 }
 
 .heading img {
-  width: 5rem;
   margin-bottom: .2rem
 }
 

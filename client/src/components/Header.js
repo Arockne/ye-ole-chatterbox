@@ -24,7 +24,7 @@ function Header({ handleUser }) {
       <header className='main-header'>
         <Link className='heading' to='/'>
           <h1>Ye Ole ChatterBox</h1>
-          <img src={logo} alt='moustache man' /> 
+          <img className='img-3' src={logo} alt='moustache man' /> 
         </Link>
         <nav>
           <NavLink 
