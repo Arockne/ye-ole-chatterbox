@@ -22,7 +22,7 @@ function ChatroomWithdrawal({ currentMember, handleChatroomMembershipWithdrawal 
     <div className='chatroom-withdrawal'>
       <button
         onClick={handleChatroomWithdrawal}
-        className='submit-button'
+        className='bttn-1'
       >Leave<br/> Parlor Room</button>
     </div>
   )

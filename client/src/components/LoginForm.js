@@ -57,7 +57,7 @@ function LoginForm({ handleUser }) {
             onChange={handleFormChange}
           />
         </label>
-        <input className='submit-button' type='submit' value='Join in!'/>
+        <input className='bttn-1 submit-button' type='submit' value='Join in!'/>
       </form>
       {
         errors.map(error => <p key={error} className='error'>{error}</p>)

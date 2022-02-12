@@ -84,7 +84,7 @@ function Messenger({ chatroom, handleChatroomMessage }) {
           type='submit'
           value={messageId ? 'Edit' : 'Send'}
           disabled={message.length === 0}
-          className='submit-button'
+          className='bttn-1'
         />
       </form>
     </div>

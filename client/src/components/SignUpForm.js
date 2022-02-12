@@ -93,7 +93,7 @@ function SignUpForm({ handleUser }) {
             </label>
           </div>
         </div>
-        <input className='submit-button' type='submit' value='Register'/>
+        <input className='bttn-1 submit-button' type='submit' value='Register'/>
       </form>
       {
         errors.map(error => 
