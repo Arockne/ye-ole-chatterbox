@@ -81,6 +81,11 @@ input[type=password]:focus {
   font-size: 1.1rem;
 }
 
+/**** Images ******/
+.img-1 {
+  width: 12rem;
+}
+
 /**** LOGIN ****/
 
 .login {
@@ -89,10 +94,6 @@ input[type=password]:focus {
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-
-.login img {
-  width: 12rem;
 }
 
 .login h2 {

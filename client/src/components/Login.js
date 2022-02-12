@@ -7,7 +7,7 @@ import SignUpForm from './SignUpForm'
 function Login({ handleUser }) {
   return (
     <>
-      <img src={logo} alt='moustache man'/>
+      <img className='img-1' src={logo} alt='moustache man'/>
       <h2>Welcome to the chatter!</h2>
       <Routes>
         <Route path='/' element={<LoginForm handleUser={handleUser} />} />
