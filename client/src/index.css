@@ -40,8 +40,6 @@ body, button {
 /***** Form Inputs ******/
 
 input[type=radio] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border-radius: 50%;
   width: .8rem;
