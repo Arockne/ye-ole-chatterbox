@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
-function Header({ handleUser }) {
+function Header({ handleUser, user }) {
+  const [activeMenu, setActiveMenu] = useState(false)
   const navigate = useNavigate()
   const {pathname} = useLocation()
   const activeStyle = { backgroundColor: '#ffd0a0', color: '#604030' }
@@ -17,6 +18,10 @@ function Header({ handleUser }) {
         navigate('/')
       }
     })
+  }
+
+  function handleActiveMenu() {
+    setActiveMenu(activeMenu => !activeMenu)
   }
 
   return (
@@ -46,6 +51,10 @@ function Header({ handleUser }) {
           >
             Parlor Room Exploration
           </NavLink>
+          <div onClick={handleActiveMenu}>
+            <img className='img-5' src={user.image_url} alt='profile'/>
+            <span className={activeMenu ? 'rotate' : ''}>◁</span>
+          </div>
           <button className='nav-button' onClick={handleLogout}>Logout</button>
         </nav>
       </header>

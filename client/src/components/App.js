@@ -58,7 +58,7 @@ function App() {
   function authorizedUser() {
     return (
       <Routes>
-        <Route path="/" element={<Header handleUser={handleUser}/>}>
+        <Route path="/" element={<Header handleUser={handleUser} user={user}/>}>
           <Route path="chatrooms" element={<MembershipNav memberships={user.memberships}/>}>
             <Route path=":chatroomId/*" element={<Chatroom user={user} handleChatroomMembershipWithdrawal={handleChatroomMembershipWithdrawal}/>}/>
           </Route>

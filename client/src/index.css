@@ -538,6 +538,12 @@ input[type=password]:focus {
   font-size: .8rem;
 }
 
+/************* Other Styles *************/
+.rotate {
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+
 /************* Screen Sizes *************/
 
 @media (height < 800px) {
