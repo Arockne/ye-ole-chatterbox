@@ -31,7 +31,7 @@ function Header({ handleUser, user }) {
           <h1>Ye Ole ChatterBox</h1>
           <img className='img-3' src={logo} alt='moustache man' /> 
         </Link>
-        <nav>
+        <nav className='main-header-nav'>
           <NavLink 
             className='nav-button' 
             to='/chatrooms'
@@ -51,11 +51,16 @@ function Header({ handleUser, user }) {
           >
             Parlor Room Exploration
           </NavLink>
-          <div onClick={handleActiveMenu}>
-            <img className='img-5' src={user.image_url} alt='profile'/>
-            <span className={activeMenu ? 'rotate' : ''}>◁</span>
+          <div>
+            <div onClick={handleActiveMenu}>
+              <img className='img-5' src={user.image_url} alt='profile'/>
+              <span className={activeMenu ? 'rotate' : ''}>◁</span>
+            </div>
+            <nav className={activeMenu ? 'dropdown-menu-active' : 'hidden'}>
+              <Link className='dropdown-menu-nav-button' to='/profile'>Profile</Link>
+              <button className='dropdown-menu-nav-button' onClick={handleLogout}>Logout</button>
+            </nav>
           </div>
-          <button className='nav-button' onClick={handleLogout}>Logout</button>
         </nav>
       </header>
       <Outlet />
