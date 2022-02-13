@@ -8,6 +8,7 @@ import Chatroom from "./Chatroom";
 import ChatroomSearch from "./ChatroomSearch";
 import MembershipNav from "./MembershipNav";
 import Welcome from './Welcome'
+import UserProfile from "./UserProfile";
 
 function App() {
   const [user, setUser] = useState(null)
@@ -64,6 +65,7 @@ function App() {
           </Route>
           <Route path="chatrooms/search" element={<ChatroomSearch handleChatroomMembership={handleChatroomMembership} />}/>
           <Route index element={<Welcome user={user}/>} />
+          <Route path="profile" element={<UserProfile user={user} handleUser={handleUser} />}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/> }/>
       </Routes>
