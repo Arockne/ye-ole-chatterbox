@@ -50,5 +50,9 @@ export const profileImages = [
   {
     name: 'Johann Sebastian Bach',
     image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg'
+  },
+  {
+    name: 'Elizabeth Esperovna Belosselsky',
+    image_url: 'https://www.toperfect.com/pic/Oil%20Painting%20Masterpieces%20on%20Canvas/Winterhalter%20Franz%20Xavier_Germany_1805-1873/5-Princess-Elizabeth-Esperovna-Belosselsky-Belosenky-Princess-Troubetskoi-royalty-portrait-Franz-Xaver-Winterhalter.jpg'
   }
 ]
