@@ -288,7 +288,10 @@ input[type=password]:focus {
 }
 
 .dropdown-menu-active {
+  right: .5rem;
   display: flex;
+  position: fixed;
+  margin-top: .5rem;
   flex-direction: column;
 }
 
