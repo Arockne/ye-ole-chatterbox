@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   skip_before_action :authorize, only: [:create]
+  before_action :authorize_user_update, only: [:update]
   
   def show
     render json: @current_user, status: :ok
@@ -12,15 +13,15 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if (current_user.id == params[:id].to_i)
-      current_user.update!(update_user_params)
-      render json: current_user, status: :ok
-    else
-      render json: { errors: ["Not authorized"] }, status: :unauthorized
-    end
+    current_user.update!(update_user_params)
+    render json: current_user, status: :ok
   end
 
   private
+
+  def authorize_user_update
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless current_user.id == params[:id].to_i
+  end
 
   def user_params
     params.permit(:username, :password, :password_confirmation, :image_url)
