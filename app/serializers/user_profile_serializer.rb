@@ -1,3 +1,3 @@
 class UserProfileSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :username, :chatlog
 end

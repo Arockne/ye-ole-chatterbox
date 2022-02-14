@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
   end
 
   def profile
-    render json: current_user, status: :ok
+    render json: current_user, status: :ok, serializer: UserProfileSerializer
   end
 
   private
