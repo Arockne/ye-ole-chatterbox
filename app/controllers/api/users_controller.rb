@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
   before_action :authorize_user_update, only: [:update]
   
   def show
-    render json: @current_user, status: :ok
+    render json: current_user, status: :ok
   end
 
   def create
