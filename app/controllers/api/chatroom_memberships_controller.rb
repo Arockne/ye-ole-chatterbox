@@ -18,7 +18,7 @@ class Api::ChatroomMembershipsController < ApplicationController
   private
 
   def membership
-    ChatroomMembership.find(params[:id])
+    @membership ||= ChatroomMembership.find(params[:id])
   end
 
   def authorize_chatroom_membership
