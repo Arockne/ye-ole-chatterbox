@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :update]
       resources :chatroom_memberships, only: [:create, :destroy]
     end
-
+    
+    resources :users, only: [:update]
     resources :messages, only: [:show, :destroy]
   end
 
