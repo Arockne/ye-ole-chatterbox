@@ -12,10 +12,21 @@ function UserProfile({ user, handleUser }) {
 
   function handleFormSubmit(e) {
     e.preventDefault()
-    const updatedUser = { ...user }
-    updatedUser.image_url = image;
-    handleUser(updatedUser)
-    setImage(updatedUser.image_url)
+    
+    fetch(`/api/users/${user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ image_url: image })
+    })
+    .then(r => {
+      if (r.ok) {
+        r.json().then(user => {
+          handleUser(user)
+        })
+      }
+    })
   }
 
   return (
