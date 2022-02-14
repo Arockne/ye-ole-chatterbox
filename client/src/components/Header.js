@@ -51,8 +51,8 @@ function Header({ handleUser, user }) {
           >
             Parlor Room Exploration
           </NavLink>
-          <div>
-            <div onClick={handleActiveMenu}>
+          <div onClick={handleActiveMenu}>
+            <div>
               <img className='img-5' src={user.image_url} alt='profile'/>
               <span className={activeMenu ? 'rotate' : ''}>◁</span>
             </div>
