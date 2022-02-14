@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
 function Header({ handleUser, user }) {
   const [activeMenu, setActiveMenu] = useState(false)
+  const dropdown = useRef(null)
   const navigate = useNavigate()
   const {pathname} = useLocation()
   const activeStyle = { backgroundColor: '#ffd0a0', color: '#604030' }
+
+  useEffect(() => {
+    document.addEventListener("click", handleActiveMenuReset, true);
+    return () => {
+      document.removeEventListener("click", handleActiveMenuReset, true);
+    }
+  }, [])
 
   function handleLogout() {
     fetch('/api/logout', {
@@ -23,6 +31,12 @@ function Header({ handleUser, user }) {
   function handleActiveMenu() {
     setActiveMenu(activeMenu => !activeMenu)
   }
+
+  const handleActiveMenuReset = event => {
+    if (dropdown.current && !dropdown.current.contains(event.target)) {
+      setActiveMenu(false);
+    }
+  };
 
   return (
     <>
@@ -51,7 +65,7 @@ function Header({ handleUser, user }) {
           >
             Parlor Room Exploration
           </NavLink>
-          <div onClick={handleActiveMenu}>
+          <div onClick={handleActiveMenu} ref={dropdown}>
             <div>
               <img className='img-5' src={user.image_url} alt='profile'/>
               <span className={activeMenu ? 'rotate' : ''}>◁</span>
