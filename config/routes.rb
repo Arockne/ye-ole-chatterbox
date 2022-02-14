@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     delete '/logout', to: 'sessions#destroy'
     get '/me', to: 'users#show'
     post '/signup', to: 'users#create'
+    get '/profile', to: 'users#profile'
 
     resources :chatrooms, only: [:index, :show] do
       resources :messages, only: [:create, :update]

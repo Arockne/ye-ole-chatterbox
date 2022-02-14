@@ -17,6 +17,10 @@ class Api::UsersController < ApplicationController
     render json: current_user, status: :ok
   end
 
+  def profile
+    render json: current_user, status: :ok
+  end
+
   private
 
   def authorize_user_update
