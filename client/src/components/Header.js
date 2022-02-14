@@ -67,7 +67,7 @@ function Header({ handleUser, user }) {
           </NavLink>
           <div onClick={handleActiveMenu} ref={dropdown}>
             <div>
-              <img className='img-5' src={user.image_url} alt='profile'/>
+              <img className='img-5 pointer' src={user.image_url} alt='profile'/>
               <span className={activeMenu ? 'rotate' : ''}>◁</span>
             </div>
             <nav className={activeMenu ? 'dropdown-menu-active' : 'hidden'}>

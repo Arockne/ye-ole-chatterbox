@@ -579,6 +579,10 @@ input[type=password]:focus {
   display: none;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /************* Screen Sizes *************/
 
 @media (height < 800px) {
