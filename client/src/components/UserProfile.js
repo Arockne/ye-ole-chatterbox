@@ -30,10 +30,12 @@ function UserProfile({ user, handleUser }) {
   }
 
   return (
-    <div>
+    <div className='user-profile'>
+      <h2>Update User Profile</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label>Change Profile Image:
+            <br />
             <select value={image} onChange={handleImageChange}>
               <option value=''>Default</option>
               {
@@ -46,7 +48,7 @@ function UserProfile({ user, handleUser }) {
             <img className='img-2' src={image ||  logo} alt='default profile face'/>
           </label>
         </div>
-        <input type='submit' value='Save' disabled={user.image_url === image}/>
+        <input className='bttn-1' type='submit' value='Save' disabled={user.image_url === image}/>
       </form>
     </div>
   )

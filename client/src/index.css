@@ -545,6 +545,14 @@ input[type=password]:focus {
   border-radius: 10px;
 }
 
+/************** User Profile **************/
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: 2 / 1 / 9 / 9;
+}
+
 /************* Application Errors *************/
 
 .errors {
