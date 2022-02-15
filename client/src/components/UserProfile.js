@@ -74,7 +74,7 @@ function UserProfile({ user, handleUser }) {
                   rows='5'
                   cols='40'
                   value={
-                    messages.map(({ id, content, created_at }) => (`Message: ${content}\nCreated At: ${created_at}\n`)).join('\n')
+                    messages.map(({ content, created_at }) => (`Message: ${content}\nCreated At: ${created_at}\n`)).join('\n')
                   }
                 />
               </div>
