@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import useWindowSize from '../hooks/useWindowSize'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
 function Header({ handleUser, user }) {
   const [activeMenu, setActiveMenu] = useState(false)
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0})
+  const [windowWidth] = useWindowSize();
   const dropdown = useRef(null)
   const navigate = useNavigate()
   const {pathname} = useLocation()
@@ -16,15 +17,6 @@ function Header({ handleUser, user }) {
       document.removeEventListener("click", handleActiveMenuReset, true);
     }
   }, [])
-
-  useLayoutEffect(() => {
-    function updateSize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
 
   function handleLogout() {
     fetch('/api/logout', {
@@ -48,7 +40,7 @@ function Header({ handleUser, user }) {
     }
   };
 
-  console.log(windowSize)
+  console.log(windowWidth)
 
   return (
     <>
@@ -59,7 +51,7 @@ function Header({ handleUser, user }) {
         </Link>
         <nav className='main-header-nav'>
           {
-            windowSize.width > 1000 ? (
+            windowWidth > 1000 ? (
               <>
                 <NavLink 
                   className='nav-button' 
@@ -90,7 +82,7 @@ function Header({ handleUser, user }) {
             </div>
             <nav className={activeMenu ? 'dropdown-menu-active' : 'hidden'}>
               {
-                windowSize.width <= 1000 ? (
+                windowWidth <= 1000 ? (
                   <>
                     <Link 
                       className='dropdown-menu-nav-button' 
