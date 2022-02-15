@@ -36,18 +36,22 @@ function Header({ handleUser, user }) {
         </Link>
         <nav className='main-header-nav'>
           {
+            windowWidth > 740 ? (
+              <NavLink 
+                className='nav-button' 
+                to='/chatrooms'
+                style={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+                end={pathname === '/chatrooms/search'}
+              >
+                Memberships
+              </NavLink>
+            ) : ''
+          }
+          {
             windowWidth > 1000 ? (
               <>
-                <NavLink 
-                  className='nav-button' 
-                  to='/chatrooms'
-                  style={({ isActive }) =>
-                    isActive ? activeStyle : undefined
-                  }
-                  end={pathname === '/chatrooms/search'}
-                >
-                  Memberships
-                </NavLink>
                 <NavLink 
                   className='nav-button' 
                   to='/chatrooms/search'
@@ -66,15 +70,18 @@ function Header({ handleUser, user }) {
               <span className={isComponentVisible ? 'rotate' : ''}>◁</span>
             </div>
             <nav className={isComponentVisible ? 'dropdown-menu-active' : 'hidden'}>
+              { windowWidth <= 740 ? (
+                <Link 
+                  className='dropdown-menu-nav-button' 
+                  to='/chatrooms'
+                >
+                Memberships
+                </Link>
+                ) : ''
+              }
               {
                 windowWidth <= 1000 ? (
                   <>
-                    <Link 
-                      className='dropdown-menu-nav-button' 
-                      to='/chatrooms'
-                    >
-                    Memberships
-                    </Link>
                     <Link 
                       className='dropdown-menu-nav-button' 
                       to='/chatrooms/search'
