@@ -1,22 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React from 'react'
 import useWindowSize from '../hooks/useWindowSize'
+import useComponentVisible from '../hooks/useComponentVisible'
 import { Link, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 
 function Header({ handleUser, user }) {
-  const [activeMenu, setActiveMenu] = useState(false)
+  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false)
   const [windowWidth] = useWindowSize();
-  const dropdown = useRef(null)
   const navigate = useNavigate()
   const {pathname} = useLocation()
   const activeStyle = { backgroundColor: '#ffd0a0', color: '#604030' }
-
-  useEffect(() => {
-    document.addEventListener("click", handleActiveMenuReset, true);
-    return () => {
-      document.removeEventListener("click", handleActiveMenuReset, true);
-    }
-  }, [])
 
   function handleLogout() {
     fetch('/api/logout', {
@@ -30,17 +23,9 @@ function Header({ handleUser, user }) {
     })
   }
 
-  function handleActiveMenu() {
-    setActiveMenu(activeMenu => !activeMenu)
+  function handleisComponentVisible() {
+    setIsComponentVisible(isComponentVisible => !isComponentVisible)
   }
-
-  const handleActiveMenuReset = event => {
-    if (dropdown.current && !dropdown.current.contains(event.target)) {
-      setActiveMenu(false);
-    }
-  };
-
-  console.log(windowWidth)
 
   return (
     <>
@@ -75,12 +60,12 @@ function Header({ handleUser, user }) {
               </>
             ) : ''
           }
-          <div onClick={handleActiveMenu} ref={dropdown}>
+          <div onClick={handleisComponentVisible} ref={ref}>
             <div>
               <img className='img-5 pointer' src={user.image_url} alt='profile'/>
-              <span className={activeMenu ? 'rotate' : ''}>◁</span>
+              <span className={isComponentVisible ? 'rotate' : ''}>◁</span>
             </div>
-            <nav className={activeMenu ? 'dropdown-menu-active' : 'hidden'}>
+            <nav className={isComponentVisible ? 'dropdown-menu-active' : 'hidden'}>
               {
                 windowWidth <= 1000 ? (
                   <>
