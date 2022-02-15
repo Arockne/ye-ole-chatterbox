@@ -62,8 +62,8 @@ function UserProfile({ user, handleUser }) {
         </div>
         <input className='bttn-1' type='submit' value='Save' disabled={user.image_url === image}/>
       </form>
-      <div>
-        <h2>Membership Logs</h2>
+      <h2>Membership Logs</h2>
+      <div className='membership-logs-container'>
         {
           profileInfo.chatlog ? (
             profileInfo.chatlog.map(({chatroom, messages}) => (

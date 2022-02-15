@@ -553,6 +553,15 @@ input[type=password]:focus {
   grid-area: 2 / 1 / 9 / 9;
 }
 
+.membership-logs-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  overflow: auto;
+}
+
 /************* Application Errors *************/
 
 .errors {
