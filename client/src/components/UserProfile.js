@@ -1,9 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../images/tophatmonocle-hat-transparent.png'
 import { profileImages } from './helpers/formhelpers'
 
 function UserProfile({ user, handleUser }) {
   const [image, setImage] = useState(user.image_url)
+  const [profileInfo, setProfileInfo] = useState({})
+
+  useEffect(() => {
+    fetch('/api/profile')
+    .then(r => {
+      if (r.ok) {
+        r.json().then(info => {
+          setProfileInfo(info)
+        })
+      }
+    })
+  }, [])
 
   function handleImageChange(e) {
     const { value } = e.target
