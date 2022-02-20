@@ -10,6 +10,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     membership = current_user.memberships.find_by(id: params[:chatroom_id])
     if membership
       message = current_user.messages.create!(message_params)
+      ActionCable.server.broadcast membership.name, MessageSerializer.new(message).as_json
       render json: message, status: :created
     else
       render json: { errors: ["Not authorized"]}, status: :unauthorized

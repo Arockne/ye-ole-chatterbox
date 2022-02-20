@@ -5,6 +5,7 @@ import Messages from './Messages'
 import Members from './Members'
 import Messenger from './Messenger'
 import ChatroomWithdrawal from './ChatroomWithdrawal'
+import Cable from 'actioncable'
 
 function reducer(state, action) {
   switch(action.type) {
@@ -34,6 +35,9 @@ function reducer(state, action) {
       updatedChatroom.messages = updatedChatroom.messages.filter(message => message.id !== action.payload.id)
       return { ...state, chatroom: updatedChatroom }
     }
+    case 'chatConnection': {
+      return { ...state, chatConnection: action.payload}
+    }
     default: {
       return state
     }
@@ -43,12 +47,36 @@ function reducer(state, action) {
 function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   const [state, dispatch] = useReducer(reducer, {
     chatroom: {},
-    errors: []
+    errors: [],
+    chatConnection: {}
   })
 
-  const { chatroom, errors } = state
+  const { chatroom, errors, chatConnection } = state
   
   const {chatroomId} = useParams()
+  
+  useEffect(() => {
+      function createSocket() {
+        const consumer = Cable.createConsumer('ws://localhost:3000/cable')
+        const subscription = consumer.subscriptions.create(
+          { 
+            channel: 'ChatChannel',
+            room: chatroom.name
+          }, 
+          {
+            received: async(message) => {
+              console.log(message)
+              dispatch({ type: 'messageNew', payload: message })
+            }
+          }
+        )
+        dispatch({ type: 'chatConnection', payload: subscription })
+      }
+      if (chatroom.name) {
+        createSocket()
+      }
+  },[chatroom.name, chatroom.id])
+  
 
 
   useEffect(() => {
@@ -67,7 +95,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   }, [chatroomId])
 
   function handleMessageNew(message) {
-    dispatch({ type: 'messageNew', payload: message})
+    //dispatch({ type: 'messageNew', payload: message})
   }
 
   function handleMessageEdit(messageEdit) {

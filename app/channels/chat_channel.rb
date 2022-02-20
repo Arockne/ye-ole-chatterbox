@@ -8,4 +8,15 @@ class ChatChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
     stop_stream_from params[:room]
   end
+
+  #action cable uses this method from ActionCable.subscription.send
+  # def receive(data)
+  #   ActionCable.server.broadcast("#{params[:room]}", data)
+  # end
+
+  # def create(message)
+  #   byebug
+  #   new_message = current_user.messages.create(content: message['content'], chatroom_id: message['chatroom_id'])
+  #   ActionCable.server.broadcast(params[:room], new_message)
+  # end
 end
