@@ -65,7 +65,6 @@ function Chatroom({ handleChatroomMembershipWithdrawal }) {
           }, 
           {
             received: async(message) => {
-              console.log(message)
               dispatch({ type: 'messageNew', payload: message })
             }
           }
