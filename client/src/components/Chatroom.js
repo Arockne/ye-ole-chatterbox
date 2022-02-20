@@ -44,7 +44,7 @@ function reducer(state, action) {
   }
 }
 
-function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
+function Chatroom({ handleChatroomMembershipWithdrawal }) {
   const [state, dispatch] = useReducer(reducer, {
     chatroom: {},
     errors: [],
@@ -95,7 +95,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   }, [chatroomId])
 
   function handleMessageNew(message) {
-    //dispatch({ type: 'messageNew', payload: message})
+    chatConnection.send([{ message: { content: message, chatroom_id: chatroom.id } }])
   }
 
   function handleMessageEdit(messageEdit) {

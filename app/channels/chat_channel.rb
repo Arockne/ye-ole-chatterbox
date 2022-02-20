@@ -10,9 +10,13 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   #action cable uses this method from ActionCable.subscription.send
-  # def receive(data)
-  #   ActionCable.server.broadcast("#{params[:room]}", data)
-  # end
+  def receive(payload)
+    message = current_user.messages.create(
+      content: payload['message']['content'], 
+      chatroom_id: payload['message']['chatroom_id']
+    )
+    ActionCable.server.broadcast("#{params[:room]}", MessageSerializer.new(message).as_json)
+  end
 
   # def create(message)
   #   byebug
