@@ -64,7 +64,7 @@ function Chatroom({ handleChatroomMembershipWithdrawal }) {
             room: chatroom.name
           }, 
           {
-            received: async(message) => {
+            received: (message) => {
               dispatch({ type: 'messageNew', payload: message })
             }
           }
