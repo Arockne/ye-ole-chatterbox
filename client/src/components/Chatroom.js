@@ -94,7 +94,7 @@ function Chatroom({ handleChatroomMembershipWithdrawal }) {
   }, [chatroomId])
 
   function handleMessageNew(message) {
-    chatConnection.send([{ message: { content: message, chatroom_id: chatroom.id } }])
+    chatConnection.send({ message: { content: message, chatroom_id: chatroom.id } })
   }
 
   function handleMessageEdit(messageEdit) {
