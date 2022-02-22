@@ -54,10 +54,10 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   const { chatroom, errors, chatConnection } = state
   
   const {chatroomId} = useParams()
-
+  
   useEffect(() => {
     function createSocket() {
-      const consumer = Cable.createConsumer('ws://localhost:3000/cable')
+      const consumer = Cable.createConsumer()
       const subscription = consumer.subscriptions.create(
         { 
           channel: 'ChatChannel',
