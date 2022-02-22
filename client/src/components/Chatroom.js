@@ -57,6 +57,9 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   
   useEffect(() => {
     function createSocket() {
+      if (chatConnection.consumer) {
+        chatConnection.unsubscribe();
+      }
       const consumer = Cable.createConsumer()
       const subscription = consumer.subscriptions.create(
         { 
