@@ -46,21 +46,8 @@ function Messenger({ chatroom, handleChatroomMessage }) {
   }
 
   function handleNew() {
-    fetch(`/api/chatrooms/${chatroom}/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ content: message })
-    })
-    .then(r => {
-      if (r.ok) {
-        r.json().then(message => {
-          handleChatroomMessage(message)
-          setMessage(() => '')
-        })
-      }
-    })
+    handleChatroomMessage(message)
+    setMessage(() => '')
   }
 
   function handleMessageSubmit(e) {
