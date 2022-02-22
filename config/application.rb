@@ -23,10 +23,6 @@ module YeOleChatterbox
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
-    config.action_cable.mount_path = '/cable'
-
-    config.action_cable.url = "ws://localhost:4000/cable"
     
     config.web_socket_server_url = "wss://https://ye-ole-chatterbox.herokuapp.com/cable"
 
