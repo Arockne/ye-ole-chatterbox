@@ -62,6 +62,11 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
         { 
           channel: 'ChatChannel',
           room: chatroom.name
+        }, 
+        {
+          received: (message) => {
+            dispatch({ type: 'messageNew', payload: message })
+          }
         }
       )
       dispatch({ type: 'chatConnection', payload: subscription })
@@ -87,7 +92,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   }, [chatroomId])
 
   function handleMessageNew(message) {
-    dispatch({ type: 'messageNew', payload: message})
+    //dispatch({ type: 'messageNew', payload: message})
   }
 
   function handleMessageEdit(messageEdit) {
