@@ -5,6 +5,7 @@ import Messages from './Messages'
 import Members from './Members'
 import Messenger from './Messenger'
 import ChatroomWithdrawal from './ChatroomWithdrawal'
+import Cable from 'actioncable'
 
 function reducer(state, action) {
   switch(action.type) {
@@ -49,6 +50,22 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   const { chatroom, errors } = state
   
   const {chatroomId} = useParams()
+
+
+  useEffect(() => {
+    function createSocket() {
+      const consumer = Cable.createConsumer('ws://localhost:3000/cable')
+      const subscription = consumer.subscriptions.create(
+        { 
+          channel: 'ChatChannel',
+          room: chatroom.name
+        }
+      )
+    }
+    if (chatroom.name) {
+      createSocket()
+    }
+},[chatroom.name, chatroom.id])
 
 
   useEffect(() => {
