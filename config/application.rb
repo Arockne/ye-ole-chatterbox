@@ -26,7 +26,7 @@ module YeOleChatterbox
 
     config.action_cable.mount_path = '/cable'
 
-    config.action_cable.url = "ws://localhost:3000/cable"
+    config.action_cable.url = "ws://localhost:4000/cable"
     
     config.web_socket_server_url = "wss://https://ye-ole-chatterbox.herokuapp.com/cable"
 
