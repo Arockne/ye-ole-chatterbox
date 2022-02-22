@@ -54,21 +54,23 @@ function Chatroom({ handleChatroomMembershipWithdrawal }) {
   const { chatroom, errors, chatConnection } = state
   
   const {chatroomId} = useParams()
-  
   useEffect(() => {
-      function createSocket() {
-        const consumer = Cable.createConsumer('ws://localhost:3000/cable')
-        const subscription = consumer.subscriptions.create(
-          { 
-            channel: 'ChatChannel',
-            room: chatroom.name
-          }, 
-          {
-            received: (message) => {
-              dispatch({ type: 'messageNew', payload: message })
-            }
+    function createSocket() {
+      if (chatConnection.consumer) {
+        chatConnection.unsubscribe()
+      }
+      const consumer = Cable.createConsumer('ws://localhost:3000/cable')
+      const subscription = consumer.subscriptions.create(
+        { 
+          channel: 'ChatChannel',
+          room: chatroom.name
+        }, 
+        {
+          received: (message) => {
+            dispatch({ type: 'messageNew', payload: message })
           }
-        )
+        }
+      )
         dispatch({ type: 'chatConnection', payload: subscription })
       }
       if (chatroom.name) {
