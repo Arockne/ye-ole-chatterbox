@@ -24,6 +24,14 @@ module YeOleChatterbox
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    config.action_cable.mount_path = '/cable'
+
+    config.action_cable.url = "ws://localhost:3000/cable"
+    
+    config.web_socket_server_url = "wss://https://ye-ole-chatterbox.herokuapp.com/cable"
+
+    config.action_cable.allowed_request_origins = ['https://ye-ole-chatterbox.herokuapp.com/', 'http://ye-ole-chatterbox.herokuapp.com/', 'http://localhost:4000']
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
