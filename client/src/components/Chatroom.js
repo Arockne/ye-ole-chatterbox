@@ -35,6 +35,9 @@ function reducer(state, action) {
       updatedChatroom.messages = updatedChatroom.messages.filter(message => message.id !== action.payload.id)
       return { ...state, chatroom: updatedChatroom }
     }
+    case 'chatConnection': {
+      return { ...state, chatConnection: action.payload}
+    }
     default: {
       return state
     }
@@ -44,13 +47,13 @@ function reducer(state, action) {
 function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
   const [state, dispatch] = useReducer(reducer, {
     chatroom: {},
-    errors: []
+    errors: [],
+    chatConnection: {}
   })
 
-  const { chatroom, errors } = state
+  const { chatroom, errors, chatConnection } = state
   
   const {chatroomId} = useParams()
-
 
   useEffect(() => {
     function createSocket() {
@@ -61,12 +64,12 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
           room: chatroom.name
         }
       )
+      dispatch({ type: 'chatConnection', payload: subscription })
     }
     if (chatroom.name) {
       createSocket()
     }
 },[chatroom.name, chatroom.id])
-
 
   useEffect(() => {
     fetch(`/api/chatrooms/${chatroomId}`)
