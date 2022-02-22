@@ -66,7 +66,7 @@ function Header({ handleUser, user }) {
           }
           <div onClick={handleisComponentVisible} ref={ref}>
             <div>
-              <img className='img-5 pointer' src={user.image_url} alt='profile'/>
+              <img className='img-5 pointer' src={user.image_url ? user.image_url : logo} alt='profile'/>
               <span className={isComponentVisible ? 'rotate' : ''}>◁</span>
             </div>
             <nav className={isComponentVisible ? 'dropdown-menu-active' : 'hidden'}>
