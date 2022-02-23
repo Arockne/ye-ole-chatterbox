@@ -60,7 +60,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
       if (chatConnection.consumer) {
         chatConnection.unsubscribe();
       }
-      const consumer = Cable.createConsumer('wss://ye-ole-chatterbox.herokuapp.com/cable')
+      const consumer = Cable.createConsumer()
       const subscription = consumer.subscriptions.create(
         { 
           channel: 'ChatChannel',
