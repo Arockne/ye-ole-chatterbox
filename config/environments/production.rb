@@ -34,7 +34,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
-  # config.action_cable.mount_path = nil
+  config.action_cable.mount_path = "/cable"
   config.action_cable.url = "wss://ye-ole-chatterbox.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = [ "https://ye-ole-chatterbox.herokuapp.com/", "http://ye-ole-chatterbox.herokuapp.com/" ]
   config.web_socket_server_url = "wss://ye-ole-chatterbox.herokuapp.com/cable"
