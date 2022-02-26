@@ -50,6 +50,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     errors: [],
     chatConnection: {}
   })
+  console.log(Cable)
 
   const { chatroom, errors, chatConnection } = state
   
