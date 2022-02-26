@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:show, :destroy]
   end
 
+  mount ActionCable.server => '/cable'
+  
   get '*path',
     to: 'fallback#index',
     constraints: ->(req) { !req.xhr? && req.format.html? }
