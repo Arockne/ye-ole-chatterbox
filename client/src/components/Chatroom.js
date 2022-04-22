@@ -41,7 +41,7 @@ function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
     if (chatroom.name) {
       createSocket()
     }
-},[chatroom.name, chatroom.id])
+  },[chatroom.name, chatroom.id])
 
   useEffect(() => {
     fetch(`/api/chatrooms/${chatroomId}`)
