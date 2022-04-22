@@ -8,7 +8,7 @@ import ChatroomWithdrawal from './ChatroomWithdrawal'
 import Cable from 'actioncable'
 import { chatReducer } from './reducers/chatroomReducer'
 
-function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
+function Chatroom({ handleChatroomMembershipWithdrawal }) {
   const [state, dispatch] = useReducer(chatReducer, {
     chatroom: {},
     errors: [],
