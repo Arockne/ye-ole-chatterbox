@@ -7,7 +7,7 @@ import Messenger from './Messenger'
 import ChatroomWithdrawal from './ChatroomWithdrawal'
 import Cable from 'actioncable'
 
-function reducer(state, action) {
+function chatReducer(state, action) {
   switch(action.type) {
     case 'fetchSuccess': {
       return { ...state, chatroom: action.payload, errors: []}
@@ -45,7 +45,7 @@ function reducer(state, action) {
 }
 
 function Chatroom({ user, handleChatroomMembershipWithdrawal }) {
-  const [state, dispatch] = useReducer(reducer, {
+  const [state, dispatch] = useReducer(chatReducer, {
     chatroom: {},
     errors: [],
     chatConnection: {}
