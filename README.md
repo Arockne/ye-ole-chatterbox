@@ -19,7 +19,6 @@ npm install --prefix client
 
 ## Future Feature Implementations:
 - Action Cable
-  - Live chat feed
   - Live memberhship join/leave
     - chatroom will be notified of join/leave
   - Current members online
@@ -27,8 +26,9 @@ npm install --prefix client
   - creator is admin
   - join by password
   - live feed of created chatrooms
-- User images
-  - default avatar images to choose from
+- Phone view
+  - need to change how chatroom is rendered
+  - need to change how welcome image renders when logged in
 
 ## Deployment Instructions
 
