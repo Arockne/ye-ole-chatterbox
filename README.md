@@ -17,6 +17,19 @@ npm install --prefix client
 ## Ruby Version:
 - 2.7.4
 
+## Side Notes:
+- Need to figure out how to have live chat working in both production and development
+  - currently only works in development
+  - If I were to add the localhost websocket url to Cable.createConsumer(WURL)
+    - The live chat would only work in development
+  - If I were to not place an argument to Cable.createConsumer()
+    - The live chat would only work in the build or production of this application
+  - Somehow need to have some kind of conditional to output a specific websocket url depending on the environment
+
+- Redis has discontinued their add-on with Heroku
+  - need to remove redis from production cable.yml and replace with something else
+  - need to find a different add-on that allows live chat
+
 ## Future Feature Implementations:
 - Action Cable
   - Live memberhship join/leave
