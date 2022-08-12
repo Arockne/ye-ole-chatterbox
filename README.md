@@ -13,6 +13,7 @@ npm install --prefix client
 ```
 ## Currently Deployed at:
 - [YeOleChatterBox](https://ye-ole-chatterbox.herokuapp.com/)
+  - Currently live chat does not work in production due to the removal of redis
 
 ## Ruby Version:
 - 2.7.4
