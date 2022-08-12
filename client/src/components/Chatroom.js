@@ -24,9 +24,7 @@ function Chatroom({ handleChatroomMembershipWithdrawal }) {
       if (chatConnection.consumer) {
         chatConnection.unsubscribe();
       }
-      //may need to add this to the consumer in the future
-      //`ws://${window.location.hostname}:3000/cable`
-      const consumer = Cable.createConsumer()
+      const consumer = Cable.createConsumer(`ws://${window.location.hostname}:3000/cable`)
       const subscription = consumer.subscriptions.create(
         { 
           channel: 'ChatChannel',
