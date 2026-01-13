@@ -1,6 +1,6 @@
 # Ye Ole Chatterbox
 
-Ye Ole Chatterbox is a chatting application without real time chat **yet...**
+Ye Ole Chatterbox is a chatting application
 
 ## To get started:
 
