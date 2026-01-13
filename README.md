@@ -11,9 +11,6 @@ bundle install
 rails db:create db:migrate db:seed
 npm install --prefix client
 ```
-## Currently Deployed at:
-- [YeOleChatterBox](https://ye-ole-chatterbox.herokuapp.com/)
-  - Currently live chat does not work in production due to the removal of redis
 
 ## Ruby Version:
 - 2.7.4
@@ -27,10 +24,6 @@ npm install --prefix client
     - The live chat would only work in the build or production of this application
   - Somehow need to have some kind of conditional to output a specific websocket url depending on the environment
 
-- Redis has discontinued their add-on with Heroku
-  - need to remove redis from production cable.yml and replace with something else
-  - need to find a different add-on that allows live chat
-
 ## Future Feature Implementations:
 - Action Cable
   - Live memberhship join/leave
@@ -38,7 +31,7 @@ npm install --prefix client
   - Current members online
 - User created chatrooms
   - creator is admin
-  - join by password
+  - join by invite
   - live feed of created chatrooms
 - Phone view
   - need to change how chatroom is rendered
