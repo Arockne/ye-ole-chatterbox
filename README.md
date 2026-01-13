@@ -23,6 +23,7 @@ npm install --prefix client
   - If I were to not place an argument to Cable.createConsumer()
     - The live chat would only work in the build or production of this application
   - Somehow need to have some kind of conditional to output a specific websocket url depending on the environment
+  - These notes may still prove useful even though this application is no longer deployed to Heroku
 
 ## Future Feature Implementations:
 - Action Cable
